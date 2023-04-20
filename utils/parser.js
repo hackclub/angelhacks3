@@ -15,11 +15,19 @@ export default class TMX {
 
   get layers() {
     return this.source.layers.filter(
-      layer => !(layer.name === 'Collision Layer')
+      layer =>
+        !(layer.name === 'Collision Layer' || layer.name === 'Special Layer')
     )
   }
 
+  get specialLayer() {
+    return this.source.layers.filter(layer => layer.name === 'Special Layer')[0]
+      .data
+  }
+
   get collisionLayer() {
-    this.source.layers.filter(layer => layer.name === 'Collision Layer')
+    return this.source.layers.filter(
+      layer => layer.name === 'Collision Layer'
+    )[0].data
   }
 }

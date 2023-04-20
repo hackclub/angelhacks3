@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Joystick';
+  src: url('../public/fonts/Joystick.otf') format('opentype');
+}
+
 body,
 html {
   margin: 0;
@@ -8,4 +13,56 @@ html {
 canvas {
   width: 100%;
   height: 100%;
+}
+
+.dialog {
+  font-family: 'Joystick', monospace;
+  font-stretch: ultra-expanded;
+  border: 2px solid #422006;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #c3b091;
+  color: #422006;
+  position: fixed;
+  bottom: 14px;
+  left: 14px;
+  padding: 14px 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100vw - 28px - 4rem);
+
+  .choices {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+
+    button {
+      background: transparent;
+      border: 0;
+      color: #422006;
+      outline: none;
+      font-family: inherit;
+      position: relative;
+
+      @keyframes flicker {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      span {
+        animation: flicker 1s ease-in-out infinite;
+        position: absolute;
+        top: 0;
+        left: -0.995rem;
+      }
+    }
+  }
 }
