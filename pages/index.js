@@ -21,27 +21,95 @@ export default function Index() {
   return (
     <div>
       <Meta />
-      <div class="container" style={{margin: '0px', padding: '10rem', backgroundColor: 'black', color: '#e0e6ed'}}>
-        <img src="https://assets.hackclub.com/flag-orpheus-left.svg" style={{position: "absolute", top: "0", left: "0"}} />
-        <h1 style={{fontWeight: '900', fontSize: '4rem'}}><span style={{color: '#009AAB'}}>Angel</span><span style={{color: '#ffb400'}}>Hacks</span> 3.0 x <span style={{color: '#ec3750'}}>Hack Club</span></h1>
-        <p style={{fontSize: '1.5rem'}}>👾 A game jam for the makers, gamers, coders, artists, musicians, and storytellers of the world. Join us in 📍 Boston, ⏳ late-May, as the official 🌸 Hack Club Spring Event, with more details to come!</p>
-        <br />
-        {/* <Button url="https://airtable.com/shrK2lcYQVjHLKNf4" label="Register" /> */}
-          <div class="buttons"><a class="button" href="https://airtable.com/shrK2lcYQVjHLKNf4">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Register
-          </a>
+      <div
+        class="container"
+        style={{
+          backgroundColor: 'black',
+          color: '#e0e6ed',
+          height: '90vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+        id="hero">
+        <div style={{ margin: 'auto', width: '90vw', maxWidth: '55rem' }}>
+          <img
+            src="https://assets.hackclub.com/flag-orpheus-left.svg"
+            style={{ position: 'absolute', top: '0', left: '0' }}
+          />
+          <style jsx>
+            {`
+              @media screen and (max-width: 400px) {
+                #header {
+                  font-size: 2rem !important;
+                }
+              }
+            `}
+          </style>
+          <h1 id="header" style={{ fontWeight: '900', fontSize: '4rem' }}>
+            <span style={{ color: '#009AAB' }}>Angel</span>&#8203;
+            <span style={{ color: '#ffb400' }}>Hacks</span> 3.0 x{' '}
+            <span style={{ color: '#ec3750' }}>Hack Club</span>
+          </h1>
+          <p style={{ fontSize: '1.5rem' }}>
+            👾 A game jam for the makers, gamers, coders, artists, musicians,
+            and storytellers of the world. Join us in 📍 Boston, ⏳ late-May, as
+            the official 🌸 Hack Club Spring Event, with more details to come!
+          </p>
+          <br />
+          {/* <Button url="https://airtable.com/shrK2lcYQVjHLKNf4" label="Register" /> */}
+          <div class="buttons">
+            <a class="button" href="https://airtable.com/shrK2lcYQVjHLKNf4">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Register
+            </a>
           </div>
+        </div>
       </div>
-      <div class="container" style={{backgroundColor: '#1b1a1f', margin: '0px', color: 'white', padding: '4rem'}}>
-        <h2 style={{fontSize: '3rem'}} class="gamefont">Love games?</h2>
-        <p style={{fontSize: '1.5rem', lineHeight: '2rem'}}>AngelHacks is a game jam, which means you’re <span style={{fontWeight: '800'}}>only</span> allowed to make games - video games, board games, puzzle hunts, VR games, ARGs… all are game (hehe get it?). <br /><br />This means 🧑‍🎨 artists, 🎨 designers, 🎹 musicians, 📚 storytellers, 👩‍💻 coders, 🎲 gamers… all are welcome. We also have three satellite events across the globe (🌴 Los Angeles, 🌉 San Francisco, and 🇨🇦 Toronto)!! For those who have heard of AngelHacks or been to it in the past, we promise to keep the vibes of angelhacks 1.0 & 2.0 combine with the magic and community of hack club. <br /><br /> 
-        
+      <div
+        class="container"
+        style={{
+          backgroundColor: '#1b1a1f',
+          margin: '0px',
+          color: 'white',
+          padding: '4rem'
+        }}>
+        <h2 style={{ fontSize: '3rem' }} class="gamefont">
+          Love games?
+        </h2>
+        <p style={{ fontSize: '1.5rem', lineHeight: '2rem' }}>
+          AngelHacks is a game jam, which means you’re{' '}
+          <span style={{ fontWeight: '800' }}>only</span> allowed to make games
+          - video games, board games, puzzle hunts, VR games, ARGs… all are game
+          (hehe get it?). <br />
+          <br />
+          This means 🧑‍🎨 artists, 🎨 designers, 🎹 musicians, 📚 storytellers, 👩‍💻
+          coders, 🎲 gamers… all are welcome. We also have three satellite
+          events across the globe (🌴 Los Angeles, 🌉 San Francisco, and 🇨🇦
+          Toronto)!! For those who have heard of AngelHacks or been to it in the
+          past, we promise to keep the vibes of angelhacks 1.0 & 2.0 combine
+          with the magic and community of hack club. <br />
+          <br />
         </p>
-        <p style={{color: '#ffdc89', textDecoration: 'none', fontSize: '1.1rem'}}>Check out our <a href="https://www.youtube.com/watch?v=rv_UycMxEsQ">1.0 recap</a> and our <a href="https://www.youtube.com/@angelhacks5695">2.0 youtube channel</a>! In addition, find our previous websites for our <a href="https://2019.angelhacks.org">2019</a> and <a href="https://2021.angelhacks.org">2021</a> events.</p>
+        <p
+          style={{
+            color: '#ffdc89',
+            textDecoration: 'none',
+            fontSize: '1.1rem'
+          }}>
+          Check out our{' '}
+          <a href="https://www.youtube.com/watch?v=rv_UycMxEsQ">1.0 recap</a>{' '}
+          and our{' '}
+          <a href="https://www.youtube.com/@angelhacks5695">
+            2.0 youtube channel
+          </a>
+          ! In addition, find our previous websites for our{' '}
+          <a href="https://2019.angelhacks.org">2019</a> and{' '}
+          <a href="https://2021.angelhacks.org">2021</a> events.
+        </p>
       </div>
       {/* <div class="container">
         <img src="placeholder.png" width="100%" height='auto'/>
