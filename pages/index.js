@@ -20,6 +20,7 @@ export default function Index() {
   return (
     <div>
       <div class="container" style={{margin: '0px', padding: '10rem', backgroundColor: 'black', color: '#e0e6ed'}}>
+        <img src="https://assets.hackclub.com/flag-orpheus-left.svg" style={{position: "absolute", top: "0", left: "0"}} />
         <h1 style={{fontWeight: '900', fontSize: '4rem'}}><span style={{color: '#009AAB'}}>Angel</span><span style={{color: '#ffb400'}}>Hacks</span> 3.0 x <span style={{color: '#ec3750'}}>Hack Club</span></h1>
         <p style={{fontSize: '1.5rem'}}>👾 A game jam for the makers, gamers, coders, artists, musicians, and storytellers of the world. Join us in 📍 Boston, ⏳ late-May, as the official 🌸 Hack Club Spring Event, with more details to come!</p>
         <br />
