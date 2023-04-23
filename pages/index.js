@@ -1,4 +1,5 @@
 import { VT323 } from 'next/font/google'
+import Meta from '../components/meta'
 import Button from '@/components/Button'
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
@@ -19,6 +20,7 @@ const Rpg = dynamic(() => import('@/components/Rpg'), {
 export default function Index() {
   return (
     <div>
+      <Meta />
       <div class="container" style={{margin: '0px', padding: '10rem', backgroundColor: 'black', color: '#e0e6ed'}}>
         <img src="https://assets.hackclub.com/flag-orpheus-left.svg" style={{position: "absolute", top: "0", left: "0"}} />
         <h1 style={{fontWeight: '900', fontSize: '4rem'}}><span style={{color: '#009AAB'}}>Angel</span><span style={{color: '#ffb400'}}>Hacks</span> 3.0 x <span style={{color: '#ec3750'}}>Hack Club</span></h1>
