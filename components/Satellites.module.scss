@@ -1,0 +1,15 @@
+.wrapper {
+  background-color: white;
+  border: 2px solid var(--dandelion);
+  box-shadow: rgba(0, 0, 0, 0.25);
+  padding: 6px 12px;
+  border-radius: 25px;
+  position: sticky;
+  margin: 0 auto;
+  top: 20px;
+  margin-top: 4rem;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  z-index: 9998;
+}

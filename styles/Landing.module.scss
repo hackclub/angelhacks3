@@ -1,0 +1,19 @@
+.header {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 2rem;
+  font-size: 5rem;
+  position: relative;
+  height: 50vh;
+
+  h1 {
+    font-family: 'Cloudier';
+    text-align: center;
+  }
+
+  svg:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

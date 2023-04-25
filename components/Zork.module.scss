@@ -1,0 +1,45 @@
+.terminal {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 15px;
+  padding: 2rem;
+  color: white;
+  font-size: 1.2rem;
+  width: 100%;
+
+  div[contenteditable] {
+    display: inline-block;
+    max-width: 100%;
+    word-break: break-all;
+    width: 100%;
+    outline: 0;
+    position: relative;
+    padding-right: 1.2rem;
+    border: 1px solid white;
+
+    &::before {
+      display: inline-block;
+      content: '>';
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  animation: flicker 1s ease-in-out infinite;
+}
