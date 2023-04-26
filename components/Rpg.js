@@ -1,5 +1,59 @@
 import { useRef, useEffect, useState } from 'react'
 import TMX from '@/utils/parser'
+import { VT323, Azeret_Mono } from 'next/font/google'
+import styles from './Modal.module.scss'
+
+const vt323 = VT323({
+  weight: ['400'],
+  subsets: ['latin']
+})
+
+const azeretMono = Azeret_Mono({
+  weight: ['400'],
+  subsets: ['latin']
+})
+
+function Comment({ setModal }) {
+  const submit = event => {
+    event.preventDefault()
+    const Comment = event.target.comment.value
+    if (Comment.length) {
+      fetch('/api/comment', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ Comment })
+      })
+        .then(res => res.json())
+        .then(json => {
+          setModal(false)
+        })
+        .catch(err => alert(err))
+    }
+  }
+
+  return (
+    <>
+      <style jsx global>{`
+        body,
+        html {
+          overflow: hidden;
+        }
+      `}</style>
+      <div
+        className={`${styles.wrapper} ${azeretMono.className}`}
+        onClick={() => setModal(false)}>
+        <div onClick={event => event.stopPropagation()}>
+          <div className={styles.form}>
+            <div className={styles.center}></div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
 
 const scale = 2.75
 const playerScale = 3
@@ -85,9 +139,50 @@ class Player {
   }
 }
 
-export default function Rpg({ map: initialMap, keys, canMove }) {
+export default function Rpg({ map: initialMap, play }) {
+  let keys = {}
   const canvasRef = useRef(null)
-  const [player, setPlayer] = useState(new Player(64, 64))
+  const [player, setPlayer] = useState(new Player(16, 16))
+  const [choice, setChoice] = useState(0)
+
+  const [dialog, setDialog] = useState([
+    {
+      message: 'What a nice day!',
+      options: [
+        {
+          text: 'So true!',
+          click: () => setDialog(prev => prev.slice(1))
+        }
+      ]
+    },
+    {
+      message: "Wait! There's a hackathon happening...",
+      options: [
+        {
+          text: 'Take me there!',
+          click: () =>
+            setDialog(prev => {
+              console.log(prev)
+              return prev.slice(1)
+            })
+        }
+      ]
+    },
+    {
+      message: (
+        <>
+          Hm, I'm pretty sure it's somewhere around here.{' '}
+          <i>Hint: Use WASD to move.</i>
+        </>
+      ),
+      options: [
+        {
+          text: "Alright, let's go!",
+          click: () => {}
+        }
+      ]
+    }
+  ])
 
   const update = (canvas, ctx, { elapsed, keys }) => {
     let tileAtlas = new Image()
@@ -133,12 +228,38 @@ export default function Rpg({ map: initialMap, keys, canMove }) {
                 scaledTileHeight
               )
               if (!map.collisionLayer[mapIndex]) {
-                // Wait have you tried to scale it yet byt the translate value?
+                // Wait have you tried to scale it yet by the translate value?
+                /*
+                if (player.y + tileHeight >= col - tileHeight) {
+                  // Above
+                  ctx.fillStyle = 'red'
+                  ctx.fillRect(
+                    row * scale,
+                    col * scale,
+                    scaledTileWidth,
+                    scaledTileHeight
+                  )
+                }
+                */
+                /*
                 if (
-                  player.x >= row &&
-                  player.y - tileHeight >= col - player.tileHeight &&
-                  player.x <= row - player.tileWidth + tileWidth &&
-                  player.y - tileHeight <= col - player.tileHeight + tileHeight
+                  player.y + tileHeight + player.tileHeight <=
+                  col - tileHeight
+                ) {
+                  // Below
+                  ctx.fillStyle = 'red'
+                  ctx.fillRect(
+                    row * scale,
+                    col * scale,
+                    scaledTileWidth,
+                    scaledTileHeight
+                  )
+                }
+                */
+                /*
+                if (
+                  player.x + tileWidth + player.tileWidth >=
+                  row - tileWidth
                 ) {
                   ctx.fillStyle = 'red'
                   ctx.fillRect(
@@ -148,51 +269,22 @@ export default function Rpg({ map: initialMap, keys, canMove }) {
                     scaledTileHeight
                   )
                 }
-                /*
                 if (
-                  player.x >= row - player.tileWidth &&
-                  player.y + tileHeight >= col - player.tileHeight &&
-                  player.x <= row - player.tileWidth + tileWidth &&
-                  player.y + tileHeight <= col - player.tileHeight + tileHeight
+                  player.x + tileWidth + player.tileWidth <= row - tileWidth &&
+                  !(
+                    player.y + tileHeight >= col - tileHeight ||
+                    player.y + tileHeight + player.tileHeight <=
+                      col - tileHeight
+                  )
                 ) {
-                  ctx.fillStyle = 'orange'
+                  // Right
+                  ctx.fillStyle = 'red'
                   ctx.fillRect(
                     row * scale,
                     col * scale,
                     scaledTileWidth,
                     scaledTileHeight
                   )
-                  collisionSprites.push('front')
-                }
-                if (
-                  player.x - tileWidth >= row - player.tileWidth &&
-                  player.y >= col - player.tileHeight &&
-                  player.x - tileWidth <= row - player.tileWidth + tileWidth &&
-                  player.y <= col - player.tileHeight + tileHeight
-                ) {
-                  ctx.fillStyle = 'yellow'
-                  ctx.fillRect(
-                    row * scale,
-                    col * scale,
-                    scaledTileWidth,
-                    scaledTileHeight
-                  )
-                  collisionSprites.push('left')
-                }
-                if (
-                  player.x + tileWidth >= row - player.tileWidth &&
-                  player.y >= col - player.tileHeight &&
-                  player.x + tileWidth <= row - player.tileWidth + tileWidth &&
-                  player.y <= col - player.tileHeight + tileHeight
-                ) {
-                  ctx.fillStyle = 'blue'
-                  ctx.fillRect(
-                    row * scale,
-                    col * scale,
-                    scaledTileWidth,
-                    scaledTileHeight
-                  )
-                  collisionSprites.push('right')
                 }
                 */
               }
@@ -234,28 +326,72 @@ export default function Rpg({ map: initialMap, keys, canMove }) {
           lastTime = now
         }
       }
-      if (true) {
+      if (play && !dialog.length) {
         requestAnimationFrame(render)
+        window.addEventListener('keydown', event => {
+          keys[event.key.toLowerCase()] = true
+        })
+        window.addEventListener('keyup', event => {
+          keys[event.key.toLowerCase()] = false
+        })
         return () => {
           cancelAnimationFrame(animationFrameId)
+          window.removeEventListener('keydown', event => {
+            keys[event.key.toLowerCase()] = true
+          })
+          window.removeEventListener('keydown', event => {
+            keys[event.key.toLowerCase()] = false
+          })
         }
-      } else {
-        update(
-          canvas,
-          ctx,
-          {
-            elapsed: 0,
-            keys: []
-          },
-          false
-        )
+      }
+
+      update(
+        canvas,
+        ctx,
+        {
+          elapsed: 0,
+          keys: []
+        },
+        false
+      )
+
+      if (play && dialog.length) {
+        console.log('Adding keydown event')
+        window.addEventListener('keydown', event => {
+          if (event.key === 'a')
+            setChoice(prev => Math.min(dialog.length - 1, prev + 1))
+          else if (event.key === 'w') setChoice(prev => Math.max(0, prev - 1))
+          else if (event.key === 'Enter') dialog[0].options[choice].click()
+        })
+        return () => {
+          window.removeEventListener('keydown', event => {
+            if (event.key === 'a')
+              setChoice(prev => Math.min(dialog.length - 1, prev + 1))
+            else if (event.key === 'w') setChoice(prev => Math.max(0, prev - 1))
+            else if (event.key === 'Enter') dialog[0].options[choice].click()
+          })
+        }
       }
     }
-  }, [])
+  }, [play, dialog])
 
   return (
     <>
       <canvas ref={canvasRef} />
+      {play === true && dialog.length !== 0 && (
+        <div className="dialog" id="dialog">
+          <p>{dialog[0].message}</p>
+          <div className="choices">
+            {dialog[0].options.map((option, idx) => {
+              return (
+                <button key={idx}>
+                  {idx === choice && <span>&gt;</span>} {option.text}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
     </>
   )
 }

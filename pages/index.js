@@ -10,50 +10,10 @@ import Zork from '@/components/Zork'
 import Satellites from '@/components/Satellites'
 import Register from '@/components/Register'
 
-const vt323 = VT323({
-  weight: ['400'],
-  subsets: ['latin']
-})
-
 const nunito = Nunito({
   weight: ['400', '500'],
   subsets: ['latin']
 })
-
-let dialog = [
-  {
-    message: 'What a nice day!',
-    options: [
-      {
-        text: 'So true!',
-        click: () => {}
-      }
-    ]
-  },
-  {
-    message: "Wait! There's a hackathon happening...",
-    options: [
-      {
-        text: 'Take me there!',
-        click: () => {}
-      }
-    ]
-  },
-  {
-    message: (
-      <>
-        Hm, I'm pretty sure it's somewhere around here.{' '}
-        <i>Hint: Use WASD to move.</i>
-      </>
-    ),
-    options: [
-      {
-        text: "Alright, let's go!",
-        click: () => {}
-      }
-    ]
-  }
-]
 
 const Rpg = dynamic(() => import('@/components/Rpg'), {
   ssr: false
@@ -63,43 +23,6 @@ export default function Index({ map, about, faq, signUp }) {
   let keys = {}
   const [modal, setModal] = useState(false)
   const [start, setStart] = useState(false)
-  const [curr, setCurr] = useState(0)
-  const [choice, setChoice] = useState(0)
-
-  const handleKeyDown = event => {
-    keys[event.key] = true
-  }
-
-  const handleKeyUp = event => {
-    keys[event.key] = false
-  }
-
-  const next = () => {
-    dialog[curr].options[choice].click()
-    setCurr(prev => {
-      return prev + 1 < dialog.length ? prev + 1 : null
-    })
-  }
-
-  useEffect(() => {
-    window.addEventListener('keydown', event => {
-      handleKeyDown(event)
-      if (event.key === 'Enter') next()
-    })
-    window.addEventListener('keyup', event => {
-      handleKeyUp(event)
-    })
-
-    return () => {
-      window.removeEventListener('keydown', event => {
-        handleKeyDown(event)
-        if (event.key === 'Enter') next()
-      })
-      window.removeEventListener('keyup', event => {
-        handleKeyUp(event)
-      })
-    }
-  }, [])
 
   return (
     <div className={nunito.className}>
@@ -108,7 +31,7 @@ export default function Index({ map, about, faq, signUp }) {
         <img src="/flag.svg" />
       </a>
       <div id="rpg">
-        <Rpg map={map} tileset={tileset} canMove={start === true} keys={keys} />
+        <Rpg map={map} tileset={tileset} play={start} keys={keys} />
         {start === false && (
           <div className="start">
             <div className={`dialog special`}>
@@ -130,20 +53,6 @@ export default function Index({ map, about, faq, signUp }) {
                   What?
                 </a>
               </div>
-            </div>
-          </div>
-        )}
-        {start === true && curr !== null && (
-          <div className="dialog" id="dialog">
-            <p>{dialog[curr].message}</p>
-            <div className="choices">
-              {dialog[curr].options.map((option, idx) => {
-                return (
-                  <button key={option.message}>
-                    {idx === choice && <span>&gt;</span>} {option.text}
-                  </button>
-                )
-              })}
             </div>
           </div>
         )}
@@ -188,7 +97,7 @@ export default function Index({ map, about, faq, signUp }) {
           <div className="prose">
             <p>
               Huh. Try a little harder. Maybe the game above? <i>wink wink</i> (
-              <button class="link" onClick={() => setModal(true)}>
+              <button className="link" onClick={() => setModal(true)}>
                 Ugh, not this again. Just let me sign up.
               </button>
               )
