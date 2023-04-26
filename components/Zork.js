@@ -142,13 +142,21 @@ export default function Zork() {
       outputRef.current.innerHTML =
         outputRef.current.innerHTML +
         (content[0] === '\n' ? '<br><br>' : content[0])
+      if (content[0] === '\n')
+        window.scrollTo(
+          0,
+          outputRef.current.offsetTop + outputRef.current.scrollHeight
+        )
       setTimeout(() => typewrite(content.slice(1)), speed)
     } else {
       // Wait for user input
       outputRef.current.innerHTML = outputRef.current.innerHTML + '<br><br>'
       let form = document.createElement('div')
       form.addEventListener('keydown', event => {
-        if (event.key === 'Enter') respond(event.target.innerText.toLowerCase())
+        if (event.key === 'Enter') {
+          form.contentEditable = false
+          respond(event.target.innerText.toLowerCase())
+        }
       })
       form.contentEditable = true
       outputRef.current.appendChild(form)
@@ -160,8 +168,10 @@ export default function Zork() {
     const form = document.createElement('div')
     form.contentEditable = true
     form.addEventListener('keydown', event => {
-      console.log(event)
-      if (event.key === 'Enter') respond(event.target.innerText.toLowerCase())
+      if (event.key === 'Enter') {
+        form.contentEditable = false
+        respond(event.target.innerText.toLowerCase())
+      }
     })
     outputRef.current.appendChild(form)
   }, [])
