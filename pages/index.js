@@ -47,7 +47,7 @@ export default function Index({ map, about, faq, signUp }) {
                 <h1>
                   AngelHacks <sup>3.0</sup>
                 </h1>
-                <h6>May 26 - 29, 2023 @ Boston HQ</h6>
+                <h6>May 27 - 28, 2023 @ Boston</h6>
               </div>
               <div className="choices">
                 <button
@@ -74,9 +74,7 @@ export default function Index({ map, about, faq, signUp }) {
         <Image src={gameboy} id="gameboy" width={400} />
         <div className="prose">
           <p>
-            Horizon is a social coding event where teens come together for a day
-            to discover the joy of code, build creative projects and share their
-            projects with the world.
+            AngelHacks 3.0 is going to be a 👾 game jam 👾 of cosmic proportions. Ok, maybe not cosmic, but the game you make can be! We're looking for the coders, artists, musicians, storytellers, and gamers out there to come together and invent new methods of procrastination and fun! It'll be in-person, overnight (though you have the choice to just stay for 12 hours), and <em>totally</em> fun. We'll have workshops, free food, and prizes for the coolest of games. So, what are you waiting for? Sign up now! If you're not in the Boston area, look up to find the links to our 3 satellite events: Bay Area, Los Angeles, and Toronto.
           </p>
           <p>
             Hack Club is a worldwide community of high school hackers. We’re
@@ -84,13 +82,12 @@ export default function Index({ map, about, faq, signUp }) {
             volunteers. We make things. We help one another. We have fun.
           </p>
           <p>
-            Horizon is fully open source, and funded and run by the Hack Club
-            community, as well as the Girl Scouts of Greater New York. Hack
-            Clubbers are organizing Horizon in public on the Hack Club Slack and
+            Hack Club is fully open source, and funded and run by the Hack Club
+            community. Hack Clubbers are organizing AngelHacks 3.0 in public on the Hack Club Slack and
             with fully transparent finances using Hack Club Bank. Everything
-            from this website to Horizon's dinner menu was created by teenagers
-            just like yourself, and you're welcome to help out in #horizon on
-            the Slack!
+            from this website to the wacky stickesr you'll find was created by teenagers
+            just like yourself, and you're welcome to help out in the #angelhacks channel on the Hack Club
+            the <a href="https://hackclub.com/slack/?event=AngelHacks&continent=North%20America">Slack</a>!
           </p>
         </div>
       </section>

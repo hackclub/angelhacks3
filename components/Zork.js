@@ -6,28 +6,34 @@ import { Button } from './PhotoGallery'
 const FAQ = `Here's a list of commonly asked questions:
 Can I join?
 -----------
-If you're in middle school, high school, or an alumni of Hack Club, yes, we are so excited to see you in SF! If you're not sure, shoot us a mail at assemble@hackclub.com.
-What do I need?
+Anyone and everyone is welcome! If you're a high schooler (and even this is flexible), you're in. All artists, musicians, storytellers, coders, and gamers are welcome—no experience required! All we need from you is a love of games & excitement to build. Still unsure? Email us at hello@angelhacks.org.
+
+What the heck is a game jam? Isn't it a hackathon?
 ---------------
-Your laptop, chargers, anything for your hack (hardware?), toiletries, sleeping bags, and an open mind.
+It's exactly as the name suggest! You're free to make anything you want, from VR games, to platformers, to board games, to puzzle hunts and ARGs, to sandbox or stragety games... the possibilities are endless. We'll have mentors and workshops to help you get started, and you'll have 12 or 24 hours to build your game. At the end, you'll get to show off your game to everyone else and play each other's games!
+
+What do I need? How does this work?
+---------------
+Your laptop, chargers, anything for your hack (hardware? a keyboard?), toiletries, sleeping bags, and an open mind. Since we're an overnight hackthon you have the choice to stay for 12 hours (just Saturday, May 27), or to stay overnight and leave the next day! 
 How much does it cost?
 ----------------------
-Nothing! We’ll have meals, snacks, and beverages onsite at the hackathon, as well as swag, prizes, and fun mini-events.
+Nothing! It's free!! Yay! We’ll have meals, snacks, and beverages onsite at the 'jam, as well as swag, prizes, and fun mini-events.
 Who is judging?
 ---------------
-Judging is done by the people that matter the most– attendees. If you ship a project you can vote on other projects. That said, we'll still have pretty cool people hang out with us.
+Judging is done by the people that matter the most– attendees. If you ship a project you can vote on other projects, science fair-esque style! We will also have some judges for certain prizes and projects, though. 
 I'm not that good at coding...
 ------------------------------
 This hackathon is for hackers of all skill levels! We'll have workshops and other events so join us and let's learn together. If you'd like to start exploring some introductory projects, check out Hack Club Workshops.
 What can I make?
 ----------------
 Anything! Apps, art, sites, and hardware projects are all perfect for a hackathon. Check out what Hack Clubbers are making every day!
-What are the sleeping arrangements?
------------------------------------
-From 9PM - 7AM on both nights we will have a designated sleeping area in the Figma office with low lights and minimal sound for you to rest! Make sure to bring a sleeping bag!
 My parents are worried!
 -----------------------
-We're here to help, ask them to reach out to us at assemble@hackclub.com and we'll make sure to answer all their questions. Assemble will be supervised by background checked staff and overseen by 24/7 security staff`
+We're here to help, ask them to reach out to us at hello@angelhacks.org and we'll make sure to answer all their questions. AngelHacks 3.0 will be supervised by background checked staff and overseen by 24/7 security staff
+Can I see your previous events?
+-----------------------
+Yes! Find our old sites at 2019.angelhacks.org or 2021.angelhacks.org. We've run an in-person event at Snapchat HQ and an online event w/ more than 1k attendees in the past! :)
+`
 
 const azeretMono = Azeret_Mono({
   weight: ['400'],
