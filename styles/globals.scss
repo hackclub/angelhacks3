@@ -15,11 +15,6 @@
   src: url('../public/fonts/Bolden.otf') format('opentype');
 }
 
-@font-face {
-  font-family: 'Pokemon';
-  src: url('../public/fonts/Pokemon.ttf') format('truetype');
-}
-
 * {
   box-sizing: border-box;
 }
@@ -62,10 +57,6 @@ canvas {
   top: 0;
   left: 0;
   z-index: 9998;
-
-  img {
-    width: 150px;
-  }
 }
 
 .dialog {
@@ -130,7 +121,6 @@ canvas {
     0 20px 20px rgba(0, 0, 0, 0.15);
   -webkit-text-stroke-color: #c3b091;
   -webkit-text-stroke-width: 2px;
-  font-family: 'Pokemon';
   color: #422006;
 }
 
@@ -213,7 +203,6 @@ canvas {
     position: absolute;
     top: 25%;
     left: -200px;
-    max-width: 400px;
     transform: rotate(-35deg);
   }
 
@@ -221,7 +210,6 @@ canvas {
     position: absolute;
     top: 45%;
     right: -200px;
-    max-width: 400px;
     transform: rotate(2deg);
   }
 }

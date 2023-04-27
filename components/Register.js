@@ -1,11 +1,14 @@
 import styles from './Modal.module.scss'
 import { Azeret_Mono } from 'next/font/google'
 import { Button } from './PhotoGallery'
+import localFont from 'next/font/local'
 
 const azeretMono = Azeret_Mono({
   weight: ['400'],
   subsets: ['latin']
 })
+
+const pokemon = localFont({ src: '../public/fonts/Pokemon.ttf' })
 
 export default function Register({ setModal }) {
   const submit = event => {
@@ -81,7 +84,9 @@ export default function Register({ setModal }) {
           </svg>
           <div className={styles.form}>
             <div className={styles.center}>
-              <h1 className="special" style={{ fontSize: '5rem' }}>
+              <h1
+                className={`${pokemon.className} special`}
+                style={{ fontSize: '5rem' }}>
                 AngelHacks <sup>3.0</sup>
               </h1>
               <div

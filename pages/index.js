@@ -1,6 +1,7 @@
 import figlet from 'figlet'
-import { VT323, Nunito } from 'next/font/google'
-import { useEffect, useState, useRef } from 'react'
+import { Nunito } from 'next/font/google'
+import localFont from 'next/font/local'
+import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import path from 'path'
 import fs from 'fs'
@@ -9,11 +10,17 @@ import PhotoGallery from '@/components/PhotoGallery'
 import Zork from '@/components/Zork'
 import Satellites from '@/components/Satellites'
 import Register from '@/components/Register'
+import Image from 'next/image'
+import hc from '@/public/flag.svg'
+import console from '@/public/console.png'
+import gameboy from '@/public/gameboy.png'
 
 const nunito = Nunito({
   weight: ['400', '500'],
   subsets: ['latin']
 })
+
+const pokemon = localFont({ src: '../public/fonts/Pokemon.ttf' })
 
 const Rpg = dynamic(() => import('@/components/Rpg'), {
   ssr: false
@@ -28,18 +35,20 @@ export default function Index({ map, about, faq, signUp }) {
     <div className={nunito.className}>
       {modal === true && <Register setModal={setModal} />}
       <a id="hackclub" href="https://hackclub.com" target="_blank">
-        <img src="/flag.svg" />
+        <Image src={hc} alt="Hack Club flag" width={150} />
       </a>
       <div id="rpg">
         <Rpg map={map} tileset={tileset} play={start} keys={keys} />
         {start === false && (
           <div className="start">
             <div className={`dialog special`}>
-              <h3>Presenting...</h3>
-              <h1>
-                AngelHacks <sup>3.0</sup>
-              </h1>
-              <h6>May 26 - 29, 2023 @ Boston HQ</h6>
+              <div className={pokemon.className}>
+                <h3>Presenting...</h3>
+                <h1>
+                  AngelHacks <sup>3.0</sup>
+                </h1>
+                <h6>May 26 - 29, 2023 @ Boston HQ</h6>
+              </div>
               <div className="choices">
                 <button
                   onClick={() => {
@@ -61,8 +70,8 @@ export default function Index({ map, about, faq, signUp }) {
       {modal === false && <Satellites />}
       <section id="first">
         <pre className="heading">{about}</pre>
-        <img src="/console.png" id="console" />
-        <img src="/gameboy.png" id="gameboy" />
+        <Image src={console} id="console" width={400} />
+        <Image src={gameboy} id="gameboy" width={400} />
         <div className="prose">
           <p>
             Horizon is a social coding event where teens come together for a day
