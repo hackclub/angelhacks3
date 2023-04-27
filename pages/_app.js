@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }) {
           data-domain="angelhacks.org"
           src="https://plausible.io/js/script.js"
         />
+        <title>AngelHacks 3.0 | A game jam for the ages!</title>
       </Head>
       <Component {...pageProps} />
     </>
