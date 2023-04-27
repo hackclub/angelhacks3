@@ -74,7 +74,7 @@ export default function Index({ map, about, faq, signUp }) {
         <Image src={gameboy} id="gameboy" width={400} />
         <div className="prose">
           <p>
-            AngelHacks 3.0 is going to be a 👾 game jam 👾 of cosmic proportions. Ok, maybe not cosmic, but the game you make can be! We're looking for the coders, artists, musicians, storytellers, and gamers out there to come together and invent new methods of procrastination and fun! It'll be in-person, overnight (though you have the choice to just stay for 12 hours), and <em>totally</em> fun. We'll have workshops, free food, and prizes for the coolest of games. So, what are you waiting for? Sign up now! If you're not in the Boston area, look up to find the links to our 3 satellite events: Bay Area, Los Angeles, and Toronto.
+            AngelHacks 3.0 is going to be a 👾 game jam 👾 of cosmic proportions. Ok, maybe not cosmic, but the game you make can be! We're looking for the coders, artists, musicians, storytellers, and gamers out there to come together and invent new methods of procrastination and fun! It'll be in-person, overnight (though you have the choice to just stay for 12 hours), and <em>totally</em> fun. We'll have workshops, free food, and prizes for the coolest of games. So, what are you waiting for? <a href="https://airtable.com/shrK2lcYQVjHLKNf4">Sign up now!</a> If you're not in the Boston area, look up to find the links to our 3 satellite events: Bay Area, Los Angeles, and Toronto.
           </p>
           <p>
             Hack Club is a worldwide community of high school hackers. We’re
@@ -82,7 +82,7 @@ export default function Index({ map, about, faq, signUp }) {
             volunteers. We make things. We help one another. We have fun.
           </p>
           <p>
-            Hack Club is fully open source, and funded and run by the Hack Club
+            Last but not least, AngelHacks is fully open source, and funded and run by the Hack Club
             community. Hack Clubbers are organizing AngelHacks 3.0 in public on the Hack Club Slack and
             with fully transparent finances using Hack Club Bank. Everything
             from this website to the wacky stickesr you'll find was created by teenagers
