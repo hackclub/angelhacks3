@@ -85,7 +85,7 @@ export default function Zork() {
         break
       case 'open zork':
         window.open('https://en.wikipedia.org/wiki/Zork', '_blank')
-        typewrite('')
+        typewrite('\nOpened a Wikipedia page on Zork!')
         break
       case 'go inside':
       case 'enter house':
