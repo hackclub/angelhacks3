@@ -57,10 +57,10 @@ export default function Index({ map, about, faq, signUp }) {
                     )
                   }}
                   style={{ fontSize: '1rem !important' }}>
-                  &#9654;
+                  &#9654; Play
                 </button>
-                <a href="#first" className={nunito.className}>
-                  What?
+                <a href="https://airtable.com/shrK2lcYQVjHLKNf4" className={nunito.className}>
+                  Register
                 </a>
               </div>
             </div>
