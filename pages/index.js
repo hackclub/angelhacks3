@@ -43,8 +43,9 @@ export default function Index({ map, about, faq, signUp }) {
               <div className="choices">
                 <button
                   onClick={() => {
-                    window.scrollTo(0, 0)
-                    setStart(true)
+                    alert(
+                      "Something's in the works... be sure to check back later!"
+                    )
                   }}
                   style={{ fontSize: '1rem !important' }}>
                   &#9654;
@@ -124,13 +125,13 @@ export async function getStaticProps() {
         await readFile(path.join(process.cwd(), 'public/main.json'))
       ),
       about: figlet.textSync('What is this?', {
-        font: 'epic'
+        font: 'Epic'
       }),
       faq: figlet.textSync('I have questions!', {
-        font: 'epic'
+        font: 'Epic'
       }),
       signUp: figlet.textSync('Sign me up!', {
-        font: 'epic'
+        font: 'Epic'
       })
     }
   }
