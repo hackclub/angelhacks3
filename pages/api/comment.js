@@ -5,6 +5,12 @@ export default async function handler(req, res) {
       apiKey: process.env.AIRTABLE,
       tableName: 'Puzzle'
     })
+    const { method } = req
+    if (method === 'GET') {
+      return res
+        .status(200)
+        .json({ success: true, comments: await puzzleAirtable.read() })
+    }
     await puzzleAirtable.create({
       Comment: req.body.message
     })

@@ -1,7 +1,5 @@
-## About
+# Angel Hacks 3.0
 
-Site for AngelHacks!
+angelhacks 3.0 site! feel free to contribute, make pull requests, etc.! 
 
-Extra features that might be fun to work on:
-
-* Having the buttons "A game jam. Hecka fun. 42 hours. Pure chaos." actually do something (like a click to earn kind of game)
+AngelHacks 3.0 is the official Hack Club Spring Event, which will be held in Boston in Late-May. It’ll be a game jam, where any coders, artists, musicians, storytellers, gamers… everyone is welcome! We’ll teach you game dev, design, and have fun game tournaments too. We also have 3 satellite events in Los Angeles, San Francisco, and Toronto.    

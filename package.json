@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "sass": "^1.62.0"
-  }
+  },
+  "assets": [
+    "node_modules/figlet/fonts/Epic.flf"
+  ]
 }

@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react'
 import TMX from '@/utils/parser'
 import { VT323, Azeret_Mono } from 'next/font/google'
 import styles from './Modal.module.scss'
+import { Button } from './PhotoGallery'
 
 const vt323 = VT323({
   weight: ['400'],
@@ -14,6 +15,8 @@ const azeretMono = Azeret_Mono({
 })
 
 function Comment({ setModal }) {
+  const [comments, setComments] = useState([])
+
   const submit = event => {
     event.preventDefault()
     const Comment = event.target.comment.value
@@ -28,11 +31,18 @@ function Comment({ setModal }) {
       })
         .then(res => res.json())
         .then(json => {
-          setModal(false)
+          setComments(json.comments)
         })
         .catch(err => alert(err))
     }
   }
+
+  useEffect(() => {
+    fetch('/api/comment')
+      .then(res => res.json())
+      .then(json => setComments(json.comments))
+      .catch(err => setComments(['Oops, there was an error: ' + err]))
+  })
 
   return (
     <>
@@ -47,7 +57,22 @@ function Comment({ setModal }) {
         onClick={() => setModal(false)}>
         <div onClick={event => event.stopPropagation()}>
           <div className={styles.form}>
-            <div className={styles.center}></div>
+            <div className={styles.center}>
+              <p>
+                Yep, this is the puzzle! Leave a lil' comment below! Keep it
+                hacky.
+              </p>
+              <form onSubmit={submit}>
+                <label>Thoughts?</label>
+                <input type="text" required name="comment" />
+                <Button fontSize="1.1rem">Here we go!!!</Button>
+              </form>
+              <hr />
+              <label>Comments</label>
+              {comments.map((comment, idx) => (
+                <p key={idx}>{comment}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -143,6 +168,7 @@ export default function Rpg({ map: initialMap, play }) {
   let keys = {}
   const canvasRef = useRef(null)
   const [player, setPlayer] = useState(new Player(16, 16))
+  const [canMove, setCanMove] = useState(play)
   const [choice, setChoice] = useState(0)
 
   const [dialog, setDialog] = useState([
@@ -160,11 +186,7 @@ export default function Rpg({ map: initialMap, play }) {
       options: [
         {
           text: 'Take me there!',
-          click: () =>
-            setDialog(prev => {
-              console.log(prev)
-              return prev.slice(1)
-            })
+          click: () => setDialog(prev => prev.slice(1))
         }
       ]
     },
@@ -326,7 +348,7 @@ export default function Rpg({ map: initialMap, play }) {
           lastTime = now
         }
       }
-      if (play && !dialog.length) {
+      if (canMove) {
         requestAnimationFrame(render)
         window.addEventListener('keydown', event => {
           keys[event.key.toLowerCase()] = true
@@ -344,33 +366,41 @@ export default function Rpg({ map: initialMap, play }) {
           })
         }
       }
+    }
+  }, [canMove])
 
-      update(
-        canvas,
-        ctx,
-        {
-          elapsed: 0,
-          keys: []
-        },
-        false
-      )
+  useEffect(() => {
+    const canvas = canvasRef.current
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    const ctx = canvas.getContext('2d')
+    ctx.imageSmoothingEnabled = false
+    update(
+      canvas,
+      ctx,
+      {
+        elapsed: 0,
+        keys: []
+      },
+      false
+    )
+  }, [])
 
-      if (play && dialog.length) {
-        console.log('Adding keydown event')
-        window.addEventListener('keydown', event => {
+  useEffect(() => {
+    if (play && dialog.length) {
+      window.addEventListener('keydown', event => {
+        if (event.key === 'a')
+          setChoice(prev => Math.min(dialog.length - 1, prev + 1))
+        else if (event.key === 'w') setChoice(prev => Math.max(0, prev - 1))
+        else if (event.key === 'Enter') dialog[0].options[choice].click()
+      })
+      return () => {
+        window.removeEventListener('keydown', event => {
           if (event.key === 'a')
             setChoice(prev => Math.min(dialog.length - 1, prev + 1))
           else if (event.key === 'w') setChoice(prev => Math.max(0, prev - 1))
           else if (event.key === 'Enter') dialog[0].options[choice].click()
         })
-        return () => {
-          window.removeEventListener('keydown', event => {
-            if (event.key === 'a')
-              setChoice(prev => Math.min(dialog.length - 1, prev + 1))
-            else if (event.key === 'w') setChoice(prev => Math.max(0, prev - 1))
-            else if (event.key === 'Enter') dialog[0].options[choice].click()
-          })
-        }
       }
     }
   }, [play, dialog])
