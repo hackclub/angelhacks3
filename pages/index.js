@@ -108,7 +108,8 @@ export default function Index({ map, about, faq, signUp }) {
             <p>
               Huh. Try a little harder. Maybe the game above? <i>wink wink</i> (
               <button className="link" onClick={() => setModal(true)}>
-                Ugh, not this again. Just let me sign up.
+                There's no game, what is this lunatic talking about? Just let me
+                sign up.
               </button>
               )
             </p>
