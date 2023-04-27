@@ -16,7 +16,7 @@ import console from '@/public/console.png'
 import gameboy from '@/public/gameboy.png'
 
 const nunito = Nunito({
-  weight: ['400', '500', '700', '900'],
+  weight: ['400', '500', '700'],
   subsets: ['latin']
 })
 
@@ -74,7 +74,7 @@ export default function Index({ map, about, faq, signUp }) {
         <Image src={gameboy} id="gameboy" width={400} />
         <div className="prose">
           <p>
-            AngelHacks 3.0 is going to be a <strong>👾 game jam 👾</strong> of cosmic proportions. Ok, maybe not cosmic, but the game you make can be! We're looking for the <span style={{fontWeight: 800}}>coders</span>, <span>artists</span>, <span>musicians</span>, <span>storytellers</span>, and <span>gamers</span> out there to come together and invent new methods of procrastination and fun! It'll be in-person, overnight (though you have the choice to just stay for 12 hours), and <em>totally</em> fun. We'll have workshops, free food, and prizes for the coolest of games. So, what are you waiting for? <a href="https://airtable.com/shrK2lcYQVjHLKNf4">Sign up now!</a> If you're not in the Boston area, look up to find the links to our 3 satellite events: Bay Area, Los Angeles, and Toronto.
+            AngelHacks 3.0 is going to be a <strong>👾 game jam 👾</strong> of cosmic proportions. Ok, maybe not cosmic, but the game you make can be! We're looking for the <span style={{fontWeight: 800, color: '#009aab'}}>coders</span>, <span style={{fontWeight: 800, color: '#ffb400'}}>artists</span>, <span style={{fontWeight: 800, color: '#13cfbf'}}>musicians</span>, <span style={{fontWeight: 800, color: '#ff5a5f'}}>storytellers</span>, and <span style={{fontWeight: 800, color: '#5cdb95'}}>gamers</span> out there to come together and invent new methods of procrastination and fun! It'll be in-person, overnight (though you have the choice to just stay for 12 hours), and <em>totally</em> fun. We'll have workshops, free food, and prizes for the coolest of games. So, what are you waiting for? <a href="https://airtable.com/shrK2lcYQVjHLKNf4">Sign up now!</a> If you're not in the Boston area, look up to find the links to our 3 satellite events: Bay Area, Los Angeles, and Toronto.
           </p>
           <p>
             Hack Club is a worldwide community of high school hackers. We’re
