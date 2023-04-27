@@ -157,7 +157,7 @@ canvas {
         outline: none;
         padding-inline: 12px;
         border-radius: 12px;
-        font-size: 2rem !important;
+        font-size: 1.7rem !important;
         font-weight: bold;
         text-decoration: none;
         text-shadow: none;
@@ -166,6 +166,7 @@ canvas {
         display: flex;
         align-items: center;
         justify-content: center;
+        line-height: 1;
       }
     }
 

@@ -51,12 +51,12 @@ export default function Index({ map, about, faq, signUp }) {
               </div>
               <div className="choices">
                 <button
+                  className={nunito.className}
                   onClick={() => {
                     alert(
                       "Something's in the works... be sure to check back later!"
                     )
-                  }}
-                  style={{ fontSize: '1rem !important' }}>
+                  }}>
                   &#9654; Play
                 </button>
                 <a onClick={() => setModal(true)} className={nunito.className}>
@@ -74,7 +74,28 @@ export default function Index({ map, about, faq, signUp }) {
         <Image src={gameboy} id="gameboy" width={400} />
         <div className="prose">
           <p>
-            AngelHacks 3.0 is going to be a <strong>👾 game jam 👾</strong> of cosmic proportions. Ok, maybe not cosmic, but the game you make can be! We're looking for the <span style={{fontWeight: 800, color: '#009aab'}}>coders</span>, <span style={{fontWeight: 800, color: '#ffb400'}}>artists</span>, <span style={{fontWeight: 800, color: '#13cfbf'}}>musicians</span>, <span style={{fontWeight: 800, color: '#ff5a5f'}}>storytellers</span>, and <span style={{fontWeight: 800, color: '#5cdb95'}}>gamers</span> out there to come together and invent new methods of procrastination and fun! It'll be in-person, overnight (though you have the choice to just stay for 12 hours), and <em>totally</em> fun. We'll have workshops, free food, and prizes for the coolest of games. So, what are you waiting for? <a onClick={() => setModal(true)}>Sign up now!</a> If you're not in the Boston area, look up to find the links to our 3 satellite events: Bay Area, Los Angeles, and Toronto.
+            AngelHacks 3.0 is going to be a <strong>👾 game jam 👾</strong> of
+            cosmic proportions. Ok, maybe not cosmic, but the game you make can
+            be! We're looking for the{' '}
+            <span style={{ fontWeight: 800, color: '#009aab' }}>coders</span>,{' '}
+            <span style={{ fontWeight: 800, color: '#ffb400' }}>artists</span>,{' '}
+            <span style={{ fontWeight: 800, color: '#13cfbf' }}>musicians</span>
+            ,{' '}
+            <span style={{ fontWeight: 800, color: '#ff5a5f' }}>
+              storytellers
+            </span>
+            , and{' '}
+            <span style={{ fontWeight: 800, color: '#5cdb95' }}>gamers</span>{' '}
+            out there to come together and invent new methods of procrastination
+            and fun! It'll be in-person, overnight (though you have the choice
+            to just stay for 12 hours), and <em>totally</em> fun. We'll have
+            workshops, free food, and prizes for the coolest of games. So, what
+            are you waiting for?{' '}
+            <a className="link" onClick={() => setModal(true)}>
+              Sign up now!
+            </a>{' '}
+            If you're not in the Boston area, look up to find the links to our 3
+            satellite events: Bay Area, Los Angeles, and Toronto.
           </p>
           <p>
             Hack Club is a worldwide community of high school hackers. We’re
@@ -82,12 +103,16 @@ export default function Index({ map, about, faq, signUp }) {
             volunteers. We make things. We help one another. We have fun.
           </p>
           <p>
-            Last but not least, AngelHacks is fully open source, and funded and run by the Hack Club
-            community, and you can find all discussions public on the Hack Club Slack and
-            fully transparent finances on Hack Club Bank. Everything
-            from this website to the wacky stickers you'll get to hoard was created by teenagers
-            just like yourself, and you're welcome to help out in the #angelhacks channel on the Hack Club
-            the <a href="https://hackclub.com/slack/?event=AngelHacks&continent=North%20America">Slack</a>!
+            Last but not least, AngelHacks is fully open source, and funded and
+            run by the Hack Club community, and you can find all discussions
+            public on the Hack Club Slack and fully transparent finances on Hack
+            Club Bank. Everything from this website to the wacky stickers you'll
+            get to hoard was created by teenagers just like yourself, and you're
+            welcome to help out in the #angelhacks channel on the Hack Club the{' '}
+            <a href="https://hackclub.com/slack/?event=AngelHacks&continent=North%20America">
+              Slack
+            </a>
+            !
           </p>
         </div>
       </section>
