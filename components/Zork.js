@@ -116,12 +116,17 @@ export default function Zork() {
           typewrite("\nYou're already at the bookshelf.")
         else typewrite('\nWhat bookshelf are you talking about?')
         break
+      case 'show FAQ':
+      case 'show faq':
+        typewrite(
+          `\nAlright. Fine, here's the FAQ. \n${FAQ}`
+        )
+        break
       case 'read book':
       case 'read the book':
       case 'read angelhacks faq':
       case 'read "angelhacks faq"':
       case "read 'angelhacks faq'":
-      case 'show FAQ':
         if (bookshelf.current)
           typewrite(
             `\nYou pull down the book. You flip to the front page: \n${FAQ}\nYou put the book back on the shelf, as it is quite heavy.`
