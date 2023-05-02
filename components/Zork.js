@@ -4,17 +4,17 @@ import { useRef, useEffect } from 'react'
 import { Button } from './PhotoGallery'
 
 const FAQ = `Here's a list of commonly asked questions:
-Can I join?
+How do I sign up? Can I? 
 -----------
-Anyone and everyone is welcome! If you're a high schooler (and even this is flexible), you're in. All artists, musicians, storytellers, coders, and gamers are welcome—no experience required! All we need from you is a love of games & excitement to build. Still unsure? Email us at hello@angelhacks.org.
+All high schoolesr welcome! If you're a high schooler (or maybe even younger), you're in. All artists, musicians, storytellers, coders, and gamers are welcome—no experience required! All we need from you is a love of games & excitement to build. Still unsure? Email us at hello@angelhacks.org.
 
 What the heck is a game jam? Isn't it a hackathon?
 ---------------
-It's exactly as the name suggest! You're free to make anything you want, from VR games, to platformers, to board games, to puzzle hunts and ARGs, to sandbox or stragety games... the possibilities are endless. We'll have mentors and workshops to help you get started, and you'll have 12 or 24 hours to build your game. At the end, you'll get to show off your game to everyone else and play each other's games!
+It's exactly as the name suggests! You're free to make anything you want, from VR games, to platformers, to board games, to puzzle hunts and ARGs, to sandbox or strategy games... the possibilities are endless. We'll have mentors and workshops to help you get started, and you'll have 12 or 24 hours to build your game. At the end, you'll get to show off your game to everyone else and play each other's games!
 
 What do I need? How does this work?
 ---------------
-Your laptop, chargers, anything for your hack (hardware? a keyboard?), toiletries, sleeping bags, and an open mind. Since we're an overnight hackthon you have the choice to stay for 12 hours (just Saturday, May 27), or to stay overnight and leave the next day! 
+Your laptop, chargers, anything for your hack (hardware? a keyboard?), toiletries, sleeping bags, and an open mind. You have the choice to stay for 12 hours (just Saturday, May 27), or to stay overnight and leave the next day!
 How much does it cost?
 ----------------------
 Nothing! It's free!! Yay! We’ll have meals, snacks, and beverages onsite at the 'jam, as well as swag, prizes, and fun mini-events.
@@ -26,7 +26,7 @@ I'm not that good at coding...
 This hackathon is for hackers of all skill levels! We'll have workshops and other events so join us and let's learn together. If you'd like to start exploring some introductory projects, check out Hack Club Workshops.
 What can I make?
 ----------------
-Anything! Apps, art, sites, and hardware projects are all perfect for a hackathon. Check out what Hack Clubbers are making every day!
+Anything! Board games, VR games, platformers, puzzle hunts, ARGs, RPGs, anything and everything is game. Create away!
 My parents are worried!
 -----------------------
 We're here to help, ask them to reach out to us at hello@angelhacks.org and we'll make sure to answer all their questions. AngelHacks 3.0 will be supervised by background checked staff and overseen by 24/7 security staff
@@ -54,7 +54,7 @@ export default function Zork() {
     switch (input) {
       case 'help':
         if (mailbox.current)
-          typewrite('\nHave you tried opening the mailbox yet?')
+          typewrite('\nHave you tried opening the mailbox yet? You can just type the command to open mailbox below.')
         else if (!indoors.current)
           typewrite('\nHave you tried going inside yet?')
         else typewrite('\nHave you checked out the bookshelf yet?')
@@ -69,13 +69,16 @@ export default function Zork() {
           if (!leafletTaken.current) {
             leafletTaken.current = true
             typewrite(
-              '\n(Taken) \n"All the answers to your questions can be found on the bookshelf inside."'
+              '\n(Taken) \n"All the answers to your questions can be found on the bookshelf inside." Don\'t give up yet!'
             )
           } else
             typewrite(
-              '\n"All the answers to your questions can be found on the bookshelf inside."'
+              '\n"All the answers to your questions can be found on the bookshelf inside." Don\'t give up yet!'
             )
         }
+        break
+      case 'give up':
+        typewrite('\nYou give up. You are eaten by a grue. Type show FAQ to skip to the end.')
         break
       case 'drop leaflet':
         if (leafletTaken.current) {
@@ -118,6 +121,7 @@ export default function Zork() {
       case 'read angelhacks faq':
       case 'read "angelhacks faq"':
       case "read 'angelhacks faq'":
+      case 'show FAQ':
         if (bookshelf.current)
           typewrite(
             `\nYou pull down the book. You flip to the front page: \n${FAQ}\nYou put the book back on the shelf, as it is quite heavy.`
@@ -189,7 +193,7 @@ export default function Zork() {
         <button
           className="link"
           onClick={() => {
-            typewrite(`\nOkay, fine you sucka. (Just joking.)\n${FAQ}`, 1)
+            typewrite(`\nOkay, fine. Take the easy route then.\n${FAQ}`, 1)
           }}>
           Can you just give me the FAQ?
         </button>

@@ -54,7 +54,7 @@ export default function Register({ setModal }) {
       .then(res => res.json())
       .then(json => {
         alert(
-          "Awesome! You'll be receiving updates from us soon through your provided email."
+          "Awesome! You'll be receiving updates from us soon through your provided email. Make sure to join the slack at hackclub.com/slack/?event=angelhacks!"
         )
         setModal(false)
       })
@@ -102,18 +102,17 @@ export default function Register({ setModal }) {
                   Unfortunately, we cannot provide travel stipends, but we do
                   have satellite events in Toronto, San Francisco, and Los
                   Angeles! You can find the link to these soon at our website
-                  (check again tomorrow!)
+                  (angelhacks.org)!
                 </p>
                 <p>
                   It'll also be a game jam, meaning everything made is a game!
                   But this is in no way a limitation because you can create
                   board games, puzzle hunts, platformers, ARGs, etc... anything
                   is fair game ;). All skill levels and experience with game dev
-                  are welcome; we'll send more specific date/location
-                  information later!
+                  are welcome!
                 </p>
                 <p>
-                  (Once you submit, you'll be redirected to the page to join the
+                  (Once you submit, make sure to go to hackclub.com/slack/?event=angelhacks to join the
                   Hack Club slack & the AngelHacks channels! Please keep the tab
                   open or download the Slack app so you get our notifications
                   and get to know your other attendees!)
@@ -218,30 +217,21 @@ export default function Register({ setModal }) {
                 <div>
                   <label>Experience</label>
                   <p>
-                    This is totally up to your own perception! Have you worked a
-                    lot in games? Feel free to share if you have done a lot of
-                    video game art/music/storytelling too, because we're looking
-                    for a good mix!
+                  Feel free to share if you have done anything related to video game art/music/storytelling/coding! (optional)
                   </p>
                   <input type="text" name="experience" />
                 </div>
                 <div>
                   <label>Game experience</label>
                   <p>
-                    What are your favorite games? Have you made your own games
-                    in the past? Comments on what you'd love to see / games
-                    you've always been inspired by?
+                  What are your favorite games? Have you made your own games in the past? Comments on what you'd love to see / games you've always been inspired by? (optional)
                   </p>
                   <input type="text" name="inspiration" />
                 </div>
                 <div>
                   <label>Goals</label>
                   <p>
-                    what do you hope to get from angelhacks? (whether it be
-                    teamwork and collaboration skills, experience in game dev,
-                    or an opportunity to meet fellow programmers...) it's
-                    totally fine if you're not sure, but feel free to ramble
-                    here :)
+                  What do you hope to get/see at angelhacks? Feel free to ramble! (totally optional)
                   </p>
                   <input type="text" name="goals" />
                 </div>
@@ -249,7 +239,7 @@ export default function Register({ setModal }) {
                   <label>Finally, would you be interested in helping?</label>
                   <p>
                     Since we are a beginner oriented game jam/hackathon, if you
-                    feel like you have some more experience we'd love to have
+                    feel like you have some more experience/are not an HS student we'd love to have
                     you as a mentor/workshop teacher/etc!
                   </p>
                   <label>

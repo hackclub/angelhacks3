@@ -87,8 +87,8 @@ export default function Index({ map, about, faq, signUp }) {
             , and{' '}
             <span style={{ fontWeight: 800, color: '#5cdb95' }}>gamers</span>{' '}
             out there to come together and invent new methods of procrastination
-            and fun! It'll be in-person, overnight (though you have the choice
-            to just stay for 12 hours), and <em>totally</em> fun. We'll have
+            and amusement! It'll be in-person, overnight (though you have the choice
+            to just stay for Saturday), and <em>totally</em> fun. We'll have
             workshops, free food, and prizes for the coolest of games. So, what
             are you waiting for?{' '}
             <a className="link" onClick={() => setModal(true)}>
@@ -100,13 +100,13 @@ export default function Index({ map, about, faq, signUp }) {
           <p>
             Hack Club is a worldwide community of high school hackers. We’re
             artists, writers, engineers, tinkerers, campers, filmmakers,
-            volunteers. We make things. We help one another. We have fun.
+            volunteers. We make things. We help one another. We have a banger of a good time. :)
           </p>
           <p>
-            Last but not least, AngelHacks is fully open source, and funded and
-            run by the Hack Club community, and you can find all discussions
-            public on the Hack Club Slack and fully transparent finances on Hack
-            Club Bank. Everything from this website to the wacky stickers you'll
+            AngelHacks is also fully open source, and funded and
+            run by the <a href="https://hackclub.com">Hack Club community</a>. You can find all discussions
+            publicly on the Hack Club Slack and fully transparent finances on <a href="https://bank.hackclub.com/hq-game-jam-spring-event-2023">Hack
+            Club Bank</a>. Everything from this website to the wacky stickers you'll
             get to hoard was created by teenagers just like yourself, and you're
             welcome to help out in the #angelhacks channel on the Hack Club the{' '}
             <a href="https://hackclub.com/slack/?event=AngelHacks&continent=North%20America">

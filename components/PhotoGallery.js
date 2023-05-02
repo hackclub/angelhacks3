@@ -77,7 +77,7 @@ export default function PhotoGallery() {
           src="https://horizon.hackclub.com/images/0.jpg"
           text="Wow! Finally done"
         />
-        <Button fontSize="2rem">24 hours. Pure chaos.</Button>
+        <Button fontSize="2rem">24 hours. Pure joy.</Button>
       </div>
     </div>
   )
