@@ -22,6 +22,13 @@ export default function Register({ setModal }) {
       return
     }
 
+    let source = []
+    if (event.target.previous.checked) source.push('From a previous event')
+    if (event.target.school.checked) source.push('Hack Club at my school')
+    if (event.target.slack.checked) source.push('The Hack Club Slack')
+    if (event.target.teacher.checked) source.push('From a teacher')
+    if (event.target.other.checked) source.push('Other')
+
     let helping = []
     if (event.target.mentor.checked) helping.push('Mentor')
     if (event.target.workshop.checked) helping.push('Workshop')
@@ -45,9 +52,9 @@ export default function Register({ setModal }) {
             : event.target.pronouns.value,
         'School': event.target.school.value,
         'T-shirt size': event.target.size.value,
-        'Skill Level': event.target.experience.value,
         'Game experience': event.target.inspiration.value,
         'Goals': event.target.goals.value,
+        'Source': source,
         'Helping': helping
       })
     })
@@ -68,6 +75,11 @@ export default function Register({ setModal }) {
         body,
         html {
           overflow: hidden;
+        }
+        .question {
+          font-size: 1.3rem;
+          font-weight: 800;
+          padding-top: 15px;
         }
       `}</style>
       <div
@@ -121,13 +133,13 @@ export default function Register({ setModal }) {
               </div>
               <form onSubmit={submit}>
                 <div>
-                  <label>
+                  <label className='question'>
                     Full name<span>*</span>
                   </label>
                   <input type="text" required name="name" />
                 </div>
                 <div>
-                  <label>
+                  <label className='question'>
                     Email<span>*</span>
                   </label>
                   <input
@@ -138,11 +150,11 @@ export default function Register({ setModal }) {
                   />
                 </div>
                 <div>
-                  <label>Phone number</label>
+                  <label className='question'>Phone number</label>
                   <input type="phone" name="phone" />
                 </div>
                 <div>
-                  <label>Pronouns</label>
+                  <label className='question'>Pronouns</label>
                   <select name="pronouns">
                     <option disabled selected>
                       {' '}
@@ -155,11 +167,11 @@ export default function Register({ setModal }) {
                   </select>
                 </div>
                 <div>
-                  <label>School</label>
+                  <label className='question'>School</label>
                   <input name="school" type="text" />
                 </div>
                 <div>
-                  <label>
+                  <label className='question'>
                     Grade<span>*</span>
                   </label>
                   <p>
@@ -185,7 +197,7 @@ export default function Register({ setModal }) {
                   </select>
                 </div>
                 <div>
-                  <label>
+                  <label className='question'>
                     Duration<span>*</span>
                   </label>
                   <p>
@@ -202,7 +214,7 @@ export default function Register({ setModal }) {
                   </select>
                 </div>
                 <div>
-                  <label>T-shirt size</label>
+                  <label className='question'>T-shirt size</label>
                   <p>For some swag &lt;3</p>
                   <select name="size">
                     <option value="XS">XS</option>
@@ -216,28 +228,47 @@ export default function Register({ setModal }) {
                   </select>
                 </div>
                 <div>
-                  <label>Experience</label>
+                  <label className='question'>Game experience</label>
                   <p>
-                  Feel free to share if you have done anything related to video game art/music/storytelling/coding! (optional)
-                  </p>
-                  <input type="text" name="experience" />
-                </div>
-                <div>
-                  <label>Game experience</label>
-                  <p>
-                  What are your favorite games? Have you made your own games in the past? Comments on what you'd love to see / games you've always been inspired by? (optional)
+                  What are your favorite games? Fav soundtracks? Also, maybe any game dev stuff you've done in the past? (optional)
                   </p>
                   <input type="text" name="inspiration" />
                 </div>
                 <div>
-                  <label>Goals</label>
+                  <label className='question'>Goals & Notes!</label>
                   <p>
-                  What do you hope to get/see at angelhacks? Feel free to ramble! (totally optional)
+                  What do you hope to get/see at angelhacks? Feel free to ramble! Do you have any dietary restrictions? (totally optional)
                   </p>
                   <input type="text" name="goals" />
                 </div>
                 <div>
-                  <label>Finally, would you be interested in helping?</label>
+                  <label className='question'>Where did you hear about us?</label>
+                  <p>
+                    (optional)
+                  </p>
+                  <label>
+                    <input name="previous" type="checkbox" />
+                    From a previous event (i.e. 2.0/1.0)
+                  </label>
+                  <label>
+                    <input name="school" type="checkbox" />
+                    Hack Club at my school
+                  </label>
+                  <label>
+                    <input name="slack" type="checkbox" />
+                    The Hack Club Slack
+                  </label>
+                  <label>
+                    <input name="teacher" type="checkbox" />
+                    From a teacher
+                  </label>
+                  <label>
+                    <input name="other" type="checkbox" />
+                    Other
+                  </label>
+                </div>
+                <div>
+                  <label className='question'>Finally, would you be interested in helping?</label>
                   <p>
                     Since we are a beginner oriented game jam/hackathon, if you
                     feel like you have some more experience/are not an HS student we'd love to have
