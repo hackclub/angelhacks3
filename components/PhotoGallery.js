@@ -24,7 +24,7 @@ export function Button({ children, fontSize = '7rem', ...props }) {
 function Image({ src, text }) {
   return (
     <div className={styles.photo}>
-      <img src={src} />
+      <img src={src} width="auto" />
       <p>{text}</p>
     </div>
   )
@@ -40,20 +40,20 @@ export default function PhotoGallery() {
           text="Look at these happy kids :)"
         />
         <Image
-          src="https://d33wubrfki0l68.cloudfront.net/bac26de2e4eb9cc341bc38e796066de23905613b/9ae5e/venue/venue3.jpg"
-          text="What are the organizers takling about?"
+          src="https://cloud-reku08wxh-hack-club-bot.vercel.app/0zephyr3-kunal.jpg"
+          text="Zephyrites on the Hacker Zephyr Superdome. Creds: Kunal Botla"
         />
         <Image
-          src="https://d33wubrfki0l68.cloudfront.net/a5e0d804650a99a06ac2be416cc11448398c74a0/efb21/venue/venue4.jpg"
-          text="Same photo, but a different angle?"
+          src="https://cloud-kfn1ngv6x-hack-club-bot.vercel.app/0assemble1.jpg"
+          text="Assemble! (the dinos). Creds: Kunal Botla"
         />
         <Image
-          src="https://d33wubrfki0l68.cloudfront.net/dbb2f6bad9e0dda9c0fc8d927b6558010f471ae8/fde5a/venue/venue5.jpg"
-          text="People are hard at work."
+          src="https://cloud-isl5t0wgt-hack-club-bot.vercel.app/0assemble4.jpg"
+          text="Assemble: conversations. Creds: Kunal Botla"
         />
         <Image
-          src="https://d33wubrfki0l68.cloudfront.net/aa465358942daf9eaf6c254b550ee4a86623e803/12d49/venue/venue6.jpg"
-          text="Wohoo!"
+          src="https://cloud-cxohvgurr-hack-club-bot.vercel.app/0horizon-kelly.jpg"
+          text="Girl Scouts @ Horizon! Creds: Kelly Marsh"
         />
         <Button>game jam.</Button>
         <Button>Hecka fun.</Button>
@@ -70,12 +70,12 @@ export default function PhotoGallery() {
           text="Look at all these people who have assembled."
         />
         <Image
-          src="https://horizon.hackclub.com/images/slh.jpg"
-          text="Okay second to last"
+          src="https://cloud-l2m072onj-hack-club-bot.vercel.app/0zephyr-vercel-kunal.jpg"
+          text="Vercel HQ w/ Zephyrites. Creds: Kunal Botla"
         />
         <Image
           src="https://horizon.hackclub.com/images/0.jpg"
-          text="Wow! Finally done"
+          text="Dinos! Dinos everywhere! Orpheus?"
         />
         <Button fontSize="2rem">24 hours. Pure joy.</Button>
       </div>

@@ -47,7 +47,7 @@ export default function Index({ map, about, faq, signUp }) {
                 <h1>
                   AngelHacks <sup>3.0</sup>
                 </h1>
-                <h6>May 27 - 28, 2023 @ Boston</h6>
+                <h6>May 27 - 28 @ Boston Seaport</h6>
               </div>
               <div className="choices">
                 <button

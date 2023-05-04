@@ -21,11 +21,14 @@
     position: relative;
     display: flex;
 
+
     img {
       align-self: center;
       border-radius: 12px;
       height: 100%;
       width: 100%;
+      overflow: hidden;
+      object-fit: cover;
     }
 
     p {

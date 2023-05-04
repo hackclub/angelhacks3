@@ -54,8 +54,9 @@ export default function Register({ setModal }) {
       .then(res => res.json())
       .then(json => {
         alert(
-          "Awesome! You'll be receiving updates from us soon through your provided email. Make sure to join the slack at hackclub.com/slack/?event=angelhacks!"
+          "Awesome! You'll be receiving updates from us soon through your provided email. Make sure to join the slack at hackclub.com/slack/?event=angelhacks (you'll be redirected)!"
         )
+        window.location.href = "https://hackclub.com/slack/?event=angelhacks";
         setModal(false)
       })
       .catch(err => console.log(err))
