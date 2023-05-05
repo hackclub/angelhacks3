@@ -240,3 +240,47 @@ section:not(.skip) {
   background-attachment: fixed;
   color: white !important;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .prose {
+    width: 90vw;
+    font-size: 1.25rem;
+    margin: 1rem;
+  }
+  #console, #gameboy {
+    display: none;
+  }
+  .heading {
+    font-size: 0.3rem;
+    max-width: 95%;
+    font-weight: 900;
+    font: Nunito;
+  }
+  .start {
+    .dialog {
+      flex-direction: column;
+      font-size: 1rem;
+      line-height: normal;
+      align-items: flex-start;
+      // padding-inline: 3rem;
+
+      h1,
+      h6 {
+        margin-top: 0;
+        position: relative;
+
+        sup {
+          font-size: 0.5rem;
+          position: absolute;
+          top: 0;
+          left: 100%;
+        }
+      }
+
+      h6 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
