@@ -25,6 +25,42 @@ a,
   text-decoration-style: dashed !important;
 }
 
+// media queries for phone
+@media only screen and (max-width: 600px) {
+  .start {
+    .dialog {
+      h3 {
+        font-size: 7vw;
+        letter-spacing: 3px;
+        padding-bottom: 20px;
+      }
+
+      sup {
+        font-size: 20px !important;
+        top: -20px !important;
+        left: 103% !important;
+      }
+
+      h1{
+        padding-bottom: 20px;
+        position: relative;
+        font-size: calc(15vw);
+      }
+      
+      h6 {
+        position: relative !important;
+        font-size: 30px;
+        line-height: 50px;
+        align-self: center;
+      }
+
+      h6 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
 .link {
   background-color: white;
   border: none;
@@ -232,6 +268,16 @@ section:not(.skip) {
   align-self: center;
   width: 55vw;
   line-height: 1.6;
+}
+
+.footer {
+  color: var(--slate);
+  font-size: 1rem;
+  align-self: center;
+  width: 55vw;
+  line-height: 1.6;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 #background {

@@ -45,7 +45,7 @@ export default function Index({ map, about, faq, signUp }) {
               <div className={pokemon.className}>
                 <h3>Presenting...</h3>
                 <h1>
-                  AngelHacks <sup>3.0</sup>
+                  <span>AngelHacks <sup>3.0</sup></span>
                 </h1>
                 <h6>May 27 - 28 @ Boston Seaport</h6>
               </div>
@@ -126,14 +126,12 @@ export default function Index({ map, about, faq, signUp }) {
         </section>
         <section>
           <pre className="heading">{signUp}</pre>
-          <div className="prose">
+          <div className="footer">
             <p>
-              Huh. Try a little harder. Maybe the game above? <i>wink wink</i> (
+              Huh. Try a little harder. Maybe the game above? <i>wink wink</i>
               <button className="link" onClick={() => setModal(true)}>
-                There's no game, what is this lunatic talking about? Just let me
-                sign up.
+                (click here to just sign up)
               </button>
-              )
             </p>
           </div>
         </section>
