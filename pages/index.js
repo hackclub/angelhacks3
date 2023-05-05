@@ -91,7 +91,7 @@ export default function Index({ map, about, faq, signUp }) {
             to just stay for Saturday), and <em>totally</em> fun. We'll have
             workshops, free food, and prizes for the coolest of games. So, what
             are you waiting for?{' '}
-            <a className="link" href="https://airtable.com/shrK2lcYQVjHLKNf4s">
+            <a className="link" href="https://airtable.com/shrK2lcYQVjHLKNf4">
               Sign up now!
             </a>{' '}
             If you're not in the Boston area, look up to find the links to our 3
