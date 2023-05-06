@@ -126,7 +126,7 @@ export default function Index({ map, about, faq, signUp, team, prizes }) {
       <section className="skip">
         <PhotoGallery />
       </section>
-      <section>
+      <section className='hidden'>
         <pre className="heading">{prizes}</pre>
         <div className="prizes flex">
           <p>
@@ -140,7 +140,7 @@ export default function Index({ map, about, faq, signUp, team, prizes }) {
           <iframe className='iframe' width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
       </section>
-      <section>
+      <section className='hidden'>
         <pre className="heading">{team}</pre>
         <div className="prose">
           <p>Meet our very very cool team of slightly suspicious dinosaurs!</p>
