@@ -26,7 +26,7 @@ const Rpg = dynamic(() => import('@/components/Rpg'), {
   ssr: false
 })
 
-export default function Index({ map, about, faq, signUp }) {
+export default function Index({ map, about, faq, signUp, team, prizes }) {
   let keys = {}
   const [modal, setModal] = useState(false)
   const [start, setStart] = useState(false)
@@ -45,7 +45,9 @@ export default function Index({ map, about, faq, signUp }) {
               <div className={pokemon.className}>
                 <h3>Presenting...</h3>
                 <h1>
-                  <span>AngelHacks <sup>3.0</sup></span>
+                  <span>
+                    AngelHacks <sup>3.0</sup>
+                  </span>
                 </h1>
                 <h6>May 27 - 28 @ Boston Seaport</h6>
               </div>
@@ -87,10 +89,10 @@ export default function Index({ map, about, faq, signUp }) {
             , and{' '}
             <span style={{ fontWeight: 800, color: '#5cdb95' }}>gamers</span>{' '}
             out there to come together and invent new methods of procrastination
-            and amusement! It'll be in-person, overnight (though you have the choice
-            to just stay for Saturday), and <em>totally</em> fun. We'll have
-            workshops, free food, and prizes for the coolest of games. So, what
-            are you waiting for?{' '}
+            and amusement! It'll be in-person, overnight (though you have the
+            choice to just stay for Saturday), and <em>totally</em> fun. We'll
+            have workshops, free food, and prizes for the coolest of games. So,
+            what are you waiting for?{' '}
             <a className="link" href="https://airtable.com/shrK2lcYQVjHLKNf4">
               Sign up now!
             </a>{' '}
@@ -100,14 +102,19 @@ export default function Index({ map, about, faq, signUp }) {
           <p>
             Hack Club is a worldwide community of high school hackers. We’re
             artists, writers, engineers, tinkerers, campers, filmmakers,
-            volunteers. We make things. We help one another. We have a banger of a good time. :)
+            volunteers. We make things. We help one another. We have a banger of
+            a good time. :)
           </p>
           <p>
-            AngelHacks is also fully open source, and funded and
-            run by the <a href="https://hackclub.com">Hack Club community</a>. You can find all discussions
-            publicly on the Hack Club Slack and fully transparent finances on <a href="https://bank.hackclub.com/hq-game-jam-spring-event-2023">Hack
-            Club Bank</a>. Everything from this website to the wacky stickers you'll
-            get to hoard was created by teenagers just like yourself, and you're
+            AngelHacks is also fully open source, and funded and run by the{' '}
+            <a href="https://hackclub.com">Hack Club community</a>. You can find
+            all discussions publicly on the Hack Club Slack and fully
+            transparent finances on{' '}
+            <a href="https://bank.hackclub.com/hq-game-jam-spring-event-2023">
+              Hack Club Bank
+            </a>
+            . Everything from this website to the wacky stickers you'll get to
+            hoard was created by teenagers just like yourself, and you're
             welcome to help out in the #angelhacks channel on the Hack Club the{' '}
             <a href="https://hackclub.com/slack/?event=AngelHacks&continent=North%20America">
               Slack
@@ -118,6 +125,52 @@ export default function Index({ map, about, faq, signUp }) {
       </section>
       <section className="skip">
         <PhotoGallery />
+      </section>
+      <section>
+        <pre className="heading">{prizes}</pre>
+        <div className="prizes flex">
+          <p>
+            lorem ipsum dolor sit amet, consectetur adipiscing elit. sed
+            vestibulum, nisl quis tincidunt ultricies, nunc nisl aliquam
+            ligula, quis ultricies nisl nunc eu nisi. vivamus euismod, nisl
+            vitae aliquam ultricies, nisl nisl aliquam ligula, quis ultricies
+            nisl nunc eu nisi. vivamus euismod, nisl vitae aliquam ultricies,
+            nisl nisl aliquam ligula, quis ultricies nisl nunc eu nisi. vivamus
+          </p>
+          <iframe className='iframe' width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </section>
+      <section>
+        <pre className="heading">{team}</pre>
+        <div className="prose">
+          <p>Meet our very very cool team of slightly suspicious dinosaurs!</p>
+          <div className="team">
+            <div className="member">
+              <h3>Orpheus Orphoso</h3>
+              <p>Lead Organizer</p>
+            </div>
+            <div className="member">
+              <h3>Orpheus Orphoso</h3>
+              <p>Lead Organizer</p>
+            </div>
+            <div className="member">
+              <h3>Orpheus Orphoso</h3>
+              <p>Lead Organizer</p>
+            </div>
+            <div className="member">
+              <h3>Orpheus Orphoso</h3>
+              <p>Lead Organizer</p>
+            </div>
+            <div className="member">
+              <h3>Orpheus Orphoso</h3>
+              <p>Lead Organizer</p>
+            </div>
+            <div className="member">
+              <h3>Orpheus Orphoso</h3>
+              <p>Lead Organizer</p>
+            </div>
+          </div>
+        </div>
       </section>
       <div id="background">
         <section>
@@ -161,6 +214,12 @@ export async function getStaticProps() {
         font: 'Epic'
       }),
       signUp: figlet.textSync('Sign me up!', {
+        font: 'Epic'
+      }),
+      team: figlet.textSync('Team!', {
+        font: 'Epic'
+      }),
+      prizes: figlet.textSync('prizes/tracks?', {
         font: 'Epic'
       })
     }
