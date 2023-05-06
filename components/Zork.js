@@ -194,15 +194,14 @@ export default function Zork() {
   return (
     <div className="prose">
       <p>
-        You'll find the answers here... (
+        You'll find the answers here... 
         <button
           className="link"
           onClick={() => {
             typewrite(`\nOkay, fine. Take the easy route then.\n${FAQ}`, 1)
           }}>
-          Can you just give me the FAQ?
+          (Can you just give me the FAQ?)
         </button>
-        )
       </p>
       <div className={`${styles.terminal} ${azeretMono.className}`}>
         <div ref={outputRef} style={{ display: 'inline' }}>
