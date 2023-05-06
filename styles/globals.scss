@@ -5,6 +5,10 @@
   --slate: #1f2d3d;
 }
 
+.hidden {
+  display: none;
+}
+
 @font-face {
   font-family: 'Joystick';
   src: url('../public/fonts/Joystick.otf') format('opentype');
