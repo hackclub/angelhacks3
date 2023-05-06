@@ -137,7 +137,7 @@ export default function Index({ map, about, faq, signUp, team, prizes }) {
             nisl nunc eu nisi. vivamus euismod, nisl vitae aliquam ultricies,
             nisl nisl aliquam ligula, quis ultricies nisl nunc eu nisi. vivamus
           </p>
-          <iframe className='iframe' width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe className='iframe' width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
       </section>
       <section>
@@ -207,19 +207,19 @@ export async function getStaticProps() {
       map: JSON.parse(
         await readFile(path.join(process.cwd(), 'public/main.json'))
       ),
-      about: figlet.textSync('What is this?', {
+      about: figlet.textSync('What\'s this?', {
         font: 'Epic'
       }),
-      faq: figlet.textSync('I have questions!', {
+      faq: figlet.textSync('Questions!', {
         font: 'Epic'
       }),
-      signUp: figlet.textSync('Sign me up!', {
+      signUp: figlet.textSync('Sign up!', {
         font: 'Epic'
       }),
-      team: figlet.textSync('Team!', {
+      team: figlet.textSync('Team', {
         font: 'Epic'
       }),
-      prizes: figlet.textSync('prizes/tracks?', {
+      prizes: figlet.textSync('Prizes!', {
         font: 'Epic'
       })
     }
