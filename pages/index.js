@@ -129,7 +129,7 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
       <section className='hidden'>
         <pre className="heading">{prizes}</pre>
         <div className="prizes flex">
-          <div style={{padding: "2rem"}}>
+          <div className="prizetext">
           <p>
             We'll add details about the judging soon, but it'll be a wonderful opportunity for you to play the games your fellow jammers have made as well as talk about some of the fun things you built! Examples of categories we'll be looking at are:</p>
             <ul>
