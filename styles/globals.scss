@@ -57,8 +57,13 @@ a,
 }
 
 .team {
-  display: flex;  
+  // display: flex;  
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   flex-wrap: wrap !important;
+  line-height: 1rem;
+  align-items: center;
+  text-align: center;
 
   h3 {
     margin:0;
@@ -69,14 +74,65 @@ a,
     margin:0;
     margin-top: 4px;
     font-size: 1rem;
+    color: #ffb400;
+    font-style: italic;
   }
 
   div {
-    margin:auto;
-    padding: 10px;
+    margin: auto;
+    padding: 0.9rem;
   }
 }
+@media only screen and (max-width: 1020px) and (min-width: 600px) {
+  #console, #gameboy {
+    width: 275px !important;
+    height: auto;
+  }
+  .prose {
+    font-size: 1.25rem;
+    width: 75vw !important;
+  }
+  .heading {
+    width: 90vw;
+    font-size: 8px;
+    text-align: center;
+  }
+  .start {
+    .dialog {
+      h3 {
+        font-size: 7vw;
+        letter-spacing: 3px;
+        padding-bottom: 20px;
+      }
 
+      sup {
+        font-size: 20px !important;
+        top: -20px !important;
+        left: 100% !important;
+      }
+
+      h1{
+        padding-bottom: 20px;
+        position: relative;
+        font-size: calc(15vw);
+      }
+      
+      h6 {
+        position: relative !important;
+        font-size: 30px;
+        line-height: 50px;
+        align-self: center;
+      }
+
+      h6 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .prizes {
+    flex-direction: column;
+  }
+}
 // media queries for phone
 @media only screen and (max-width: 600px) {
   .prose {
@@ -87,6 +143,9 @@ a,
   #console, #gameboy {
     display: none;
   }
+  // pre {
+  //   font-family: Pokemon, Nunito !important; 
+  // }
   .heading {
     font-size: 5px;
     width: 90%;
@@ -128,6 +187,19 @@ a,
       h6 {
         margin-bottom: 1rem;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .team {
+    // display: flex;  
+    display: grid;
+    grid-template-columns: auto auto;
+    h3 {font-size: 1rem;}
+    p {font-size: 0.8rem;}
+    div {
+      padding: 0.8rem;
     }
   }
 }
