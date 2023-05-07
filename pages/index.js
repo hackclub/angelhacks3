@@ -26,7 +26,7 @@ const Rpg = dynamic(() => import('@/components/Rpg'), {
   ssr: false
 })
 
-export default function Index({ map, about, faq, signUp, team, prizes }) {
+export default function Index({ map, about, faq, signUp, team, prizes, schedule }) {
   let keys = {}
   const [modal, setModal] = useState(false)
   const [start, setStart] = useState(false)
@@ -130,44 +130,116 @@ export default function Index({ map, about, faq, signUp, team, prizes }) {
         <pre className="heading">{prizes}</pre>
         <div className="prizes flex">
           <p>
-            lorem ipsum dolor sit amet, consectetur adipiscing elit. sed
-            vestibulum, nisl quis tincidunt ultricies, nunc nisl aliquam
-            ligula, quis ultricies nisl nunc eu nisi. vivamus euismod, nisl
-            vitae aliquam ultricies, nisl nisl aliquam ligula, quis ultricies
-            nisl nunc eu nisi. vivamus euismod, nisl vitae aliquam ultricies,
-            nisl nisl aliquam ligula, quis ultricies nisl nunc eu nisi. vivamus
+            We'll add details about the judging soon, but it'll be a wonderful opportunity for you to play the games your fellow jammers have made as well as talk about some of the fun things you built! Examples of categories we'll be looking at are:
+            <ul>
+              <li><strong>Nourishingly Novel Narrative</strong></li>
+              <li><strong>Masterful Mechanics</strong> (Best Game Mechanics)</li>
+              <li><strong>Exceptional Eye Candy</strong> (Best Visuals)</li>
+              <li><strong>Uniquely Useless</strong> (believe me, this is NOT an insult. Winner gets a year's worth of Ramen!)</li>
+              <li><strong>Poignantly Pointed</strong> (not quite sure what this means, but we do know the winner gets... swords?)</li>
+              <li><strong>Dreadfully Democratic</strong></li>
+            </ul>
+            Stay tuned for more & look at our 1.0 recap!
           </p>
-          <iframe className='iframe' width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+          <iframe className='iframe' width="560" height="315" src="https://www.youtube.com/watch?v=rv_UycMxEsQ" title="YouTube video player" frameBorder="0" caption="Look at our 1.0 recapt!" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
+      </section>
+      <section className='hidden'>
+        <pre className="heading">{schedule}</pre>
+        <div className="prose">
+          <p>
+            We'll be updating this schedule as we get closer to the event, but
+            here's a rough idea of what to expect from Saturday, May 27 to Sunday, May 28:
+          </p>
+          <ul style={{listStyle: "none", fontSize: '1.2rem'}}>
+            <li>
+            👋 <strong>9:00 AM</strong> - Doors open, registration, and meet fun people
+            </li>
+            <li> 👐 <strong>10:00 AM</strong> - Opening ceremony</li>
+            <li> 🤖 <strong>11:00 AM</strong> - Hacking starts</li>
+            <li> 🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)</li>
+            <li> 👐 <strong>...</strong> - We'll add some more things here!</li>
+            <li> 🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging time.</li>
+            <li> 💔 <strong>12:00 PM</strong> - Goodbye :) </li>
+            </ul>
+            </div>
       </section>
       <section className='hidden'>
         <pre className="heading">{team}</pre>
         <div className="prose">
-          <p>Meet our very very cool team of slightly suspicious dinosaurs!</p>
+          <p>Meet our very, very cool team of slightly suspicious dinosaurs from across the continent & their favorite games!</p>
           <div className="team">
             <div className="member">
-              <h3>Orpheus Orphoso</h3>
-              <p>Lead Organizer</p>
+              <h3>Claire Wang</h3>
+              <p>Polytopia & SineRider</p>
             </div>
             <div className="member">
-              <h3>Orpheus Orphoso</h3>
-              <p>Lead Organizer</p>
+              <h3>Neel Redkar</h3>
+              <p>Rawr</p>
             </div>
             <div className="member">
-              <h3>Orpheus Orphoso</h3>
-              <p>Lead Organizer</p>
+              <h3>Damian</h3>
+              <p>Rawr</p>
             </div>
             <div className="member">
-              <h3>Orpheus Orphoso</h3>
-              <p>Lead Organizer</p>
+              <h3>Kevin Yang</h3>
+              <p>Rawr</p>
             </div>
             <div className="member">
-              <h3>Orpheus Orphoso</h3>
-              <p>Lead Organizer</p>
+              <h3>Kai</h3>
+              <p>Hollow Knight & Hyperbolica</p>
             </div>
             <div className="member">
-              <h3>Orpheus Orphoso</h3>
-              <p>Lead Organizer</p>
+              <h3>Quillan George</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Elysse Gonzalez</h3>
+              <p>Night in the Woods</p>
+            </div>
+            <div className="member">
+              <h3>Amanda Chen</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Hugo Hu</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Zoya Hussain</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Leah Vashevko</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Arpan Pandey</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Ryan Chou</h3>
+              <p>Tetris</p>
+            </div>
+            <div className="member">
+              <h3>Maggie Liu</h3>
+              <p>Monument Valley</p>
+            </div>
+            <div className="member">
+              <h3>Arav Narula</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Rishi Kothari</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Sam Liu</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Ruien Luo</h3>
+              <p>Rawr</p>
             </div>
           </div>
         </div>
@@ -220,6 +292,9 @@ export async function getStaticProps() {
         font: 'Epic'
       }),
       prizes: figlet.textSync('Prizes!', {
+        font: 'Epic'
+      }),
+      schedule: figlet.textSync('Schedule!', {
         font: 'Epic'
       })
     }
