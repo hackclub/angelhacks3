@@ -61,7 +61,8 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
                   }}>
                   &#9654; Play
                 </button>
-                <a onClick={() => setModal(true)} className={nunito.className}>
+                {/* <a onClick={() => setModal(true)} className={nunito.className}> */}
+                <a href="https://airtable.com/shrK2lcYQVjHLKNf4" className={nunito.className}>
                   Register
                 </a>
               </div>
@@ -173,20 +174,20 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
               <p>Polytopia & SineRider</p>
             </div>
             <div className="member">
-              <h3>Neel Redkar</h3>
-              <p>Rawr</p>
-            </div>
-            <div className="member">
               <h3>Damian Musk</h3>
-              <p>Rawr</p>
-            </div>
-            <div className="member">
-              <h3>Kevin Yang</h3>
-              <p>Rawr</p>
+              <p>Portal 2 & OFF</p>
             </div>
             <div className="member">
               <h3>Kai Musk</h3>
               <p>Hollow Knight & Hyperbolica</p>
+            </div>
+            <div className="member">
+              <h3>Neel Redkar</h3>
+              <p>Celeste & Undertale</p>
+            </div>
+            <div className="member">
+              <h3>Kevin Yang</h3>
+              <p>Rawr</p>
             </div>
             <div className="member">
               <h3>Quillan George</h3>
@@ -201,8 +202,16 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
               <p>Rawr</p>
             </div>
             <div className="member">
+              <h3>Jaden Hou</h3>
+              <p>Minecraft</p>
+            </div>
+            <div className="member">
               <h3>Hugo Hu</h3>
               <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Charalampos Fanoulis</h3>
+              <p>Satisfactory</p>
             </div>
             <div className="member">
               <h3>Zoya Hussain</h3>
@@ -213,8 +222,16 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
               <p>Rawr</p>
             </div>
             <div className="member">
+              <h3>Sarah Wang</h3>
+              <p>Rawr</p>
+            </div>
+            <div className="member">
               <h3>Arpan Pandey</h3>
               <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Brianna Magtoto</h3>
+              <p>Stardew Valley</p>
             </div>
             <div className="member">
               <h3>Ryan Chou</h3>
@@ -230,7 +247,7 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
             </div>
             <div className="member">
               <h3>Rishi Kothari</h3>
-              <p>Rawr</p>
+              <p>Skyrim</p>
             </div>
             <div className="member">
               <h3>Sam Liu</h3>
@@ -239,6 +256,14 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
             <div className="member">
               <h3>Ruien Luo</h3>
               <p>Rawr</p>
+            </div>
+            <div className="member">
+              <h3>Patricio Cabrera</h3>
+              <p>Minecraft</p>
+            </div>
+            <div className="member">
+              <h3>Kara Massie</h3>
+              <p>Unstable Unicorns</p>
             </div>
           </div>
         </div>
