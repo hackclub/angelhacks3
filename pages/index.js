@@ -144,7 +144,7 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
             <p>Stay tuned for more & look at our 1.0 recap!
           </p>
           </div>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/rv_UycMxEsQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+          <iframe src="https://www.youtube.com/embed/rv_UycMxEsQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
       </section>
       <section className='hidden'>
         <pre className="heading">{schedule}</pre>
