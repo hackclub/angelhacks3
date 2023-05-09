@@ -52,15 +52,11 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
                 <h6>May 27 - 28 @ Boston Seaport</h6>
               </div>
               <div className="choices">
-                <button
+                <a
                   className={nunito.className}
-                  onClick={() => {
-                    alert(
-                      "Something's in the works... be sure to check back later!"
-                    )
-                  }}>
+                  href="#game">
                   &#9654; Play
-                </button>
+                </a>
                 {/* <a onClick={() => setModal(true)} className={nunito.className}> */}
                 <a href="https://airtable.com/shrK2lcYQVjHLKNf4" className={nunito.className}>
                   Register
@@ -271,6 +267,7 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
       <div id="background">
         <section>
           <pre className="heading">{faq}</pre>
+          <a id="game">
           <Zork />
         </section>
         <section>
