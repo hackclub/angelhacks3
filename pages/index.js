@@ -171,7 +171,7 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
           <div className="team">
             <div className="member">
               <h3>Claire Wang</h3>
-              <p>Polytopia & SineRider</p>
+              <p>Polytopia (Director)</p>
             </div>
             <div className="member">
               <h3>Damian</h3>
@@ -202,12 +202,12 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
               <p>Rawr</p>
             </div>
             <div className="member">
-              <h3>Jaden Hou</h3>
-              <p>Minecraft</p>
+              <h3>Hugo Hu</h3>
+              <p>Rawr (Logistics)</p>
             </div>
             <div className="member">
-              <h3>Hugo Hu</h3>
-              <p>Rawr</p>
+              <h3>Jaden Hou</h3>
+              <p>Minecraft</p>
             </div>
             <div className="member">
               <h3>Charalampos Fanoulis</h3>
@@ -215,10 +215,6 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
             </div>
             <div className="member">
               <h3>Zoya Hussain</h3>
-              <p>Rawr</p>
-            </div>
-            <div className="member">
-              <h3>Leah Vashevko</h3>
               <p>Rawr</p>
             </div>
             <div className="member">
@@ -235,31 +231,31 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
             </div>
             <div className="member">
               <h3>Ryan Chou</h3>
-              <p>Tetris</p>
+              <p>Tetris (Bay Area)</p>
             </div>
             <div className="member">
               <h3>Maggie Liu</h3>
-              <p>Monument Valley</p>
+              <p>Monument Valley (Bay Area)</p>
             </div>
             <div className="member">
               <h3>Arav Narula</h3>
-              <p>Rawr</p>
+              <p>Rawr (Toronto)</p>
             </div>
             <div className="member">
               <h3>Rishi Kothari</h3>
-              <p>Skyrim</p>
+              <p>Skyrim (Toronto)</p>
             </div>
             <div className="member">
               <h3>Sam Liu</h3>
-              <p>Rawr</p>
+              <p>Rawr (Toronto)</p>
             </div>
             <div className="member">
               <h3>Ruien Luo</h3>
-              <p>Rawr</p>
+              <p>Rawr (LA)</p>
             </div>
             <div className="member">
-              <h3>Patricio Cabrera</h3>
-              <p>Minecraft</p>
+              <h3>Andrea Yang</h3>
+              <p>Rawr (LA)</p>
             </div>
             <div className="member">
               <h3>Kara Massie</h3>
