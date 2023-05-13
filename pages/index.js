@@ -171,14 +171,14 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
           <div className="team">
             <div className="member">
               <h3>Claire Wang</h3>
-              <p>Polytopia (Director)</p>
+              <p>Polytopia</p>
             </div>
             <div className="member">
-              <h3>Damian Musk</h3>
+              <h3>Damian Wilson</h3>
               <p>Portal 2 & OFF</p>
             </div>
             <div className="member">
-              <h3>Kai Musk</h3>
+              <h3>Kai Wilson</h3>
               <p>Hollow Knight & Hyperbolica</p>
             </div>
             <div className="member">
