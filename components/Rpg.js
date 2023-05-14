@@ -100,6 +100,7 @@ class Player {
     this.x = x
     this.y = y
     this.anim = 0
+    this.avatars = {}
   }
 
   update(collisionSprites, keys, elapsed) {
@@ -144,11 +145,19 @@ class Player {
   }
 
   draw(canvas, ctx) {
-    let avatar = new Image()
-    avatar.src = `/luna/luna_${this.direction}_walking${
+    const avatarUri = `/luna/luna_${this.direction}_walking${
       this.action ? '_' + this.action : ''
     }.png`
-    avatar.onload = () => {
+    let avatar
+    if (avatarUri in this.avatars) {
+      avatar = this.avatars[avatarUri]
+    } else {
+      console.log('loading new image')
+      avatar = new Image()
+      avatar.src = avatarUri
+      this.avatars[avatarUri] = avatar
+    }
+    if (avatar.complete)
       ctx.drawImage(
         avatar,
         0,
@@ -160,9 +169,13 @@ class Player {
         this.tileWidth * playerScale,
         this.tileHeight * playerScale
       )
-    }
   }
 }
+
+const tileAtlas = new Image()
+tileAtlas.src = '/main.png'
+
+let i = 0
 
 export default function Rpg({ map: initialMap, play }) {
   let keys = {}
@@ -170,6 +183,18 @@ export default function Rpg({ map: initialMap, play }) {
   const [player, setPlayer] = useState(new Player(16, 16))
   const [canMove, setCanMove] = useState(play)
   const [choice, setChoice] = useState(0)
+
+  const map = new TMX(initialMap)
+  const tileWidth = map.tileWidth
+  const tileHeight = map.tileHeight
+  const scaledTileWidth = tileWidth * scale
+  const scaledTileHeight = tileHeight * scale
+  const atlasCol = 64
+  const atlasRow = 64
+  const mapCols = map.columns
+  const mapRows = map.rows
+  const mapHeight = mapRows * tileHeight
+  const mapWidth = mapCols * tileWidth
 
   const [dialog, setDialog] = useState([
     {
@@ -206,125 +231,112 @@ export default function Rpg({ map: initialMap, play }) {
     }
   ])
 
-  const update = (canvas, ctx, { elapsed, keys }) => {
-    let tileAtlas = new Image()
-    tileAtlas.src = '/main.png'
-    tileAtlas.onload = () => {
-      // Center map around player
-      const map = new TMX(initialMap)
-      const tileWidth = map.tileWidth
-      const tileHeight = map.tileHeight
-      const scaledTileWidth = tileWidth * scale
-      const scaledTileHeight = tileHeight * scale
-      const atlasCol = 64
-      const atlasRow = 64
-      const mapCols = map.columns
-      const mapRows = map.rows
-      const mapHeight = mapRows * tileHeight
-      const mapWidth = mapCols * tileWidth
-      ctx.save()
-      ctx.translate(-player.x * 2, -player.y * 2)
-      let collisionSprites = []
-      for (let layer of map.layers) {
-        const levelMap = layer.data
-        let mapIndex = 0
-        let sourceX = 0
-        let sourceY = 0
-        for (let col = 0; col < mapHeight; col += tileHeight) {
-          for (let row = 0; row < mapWidth; row += tileWidth) {
-            let tileVal = levelMap[mapIndex]
-            if (tileVal != 0) {
-              tileVal--
-              sourceY = Math.floor(tileVal / atlasCol) * tileHeight
-              sourceX = (tileVal % atlasCol) * tileWidth
-              // Determine if user is touching square
-              ctx.drawImage(
-                tileAtlas,
-                sourceX,
-                sourceY,
-                tileWidth,
-                tileHeight,
-                row * scale,
-                col * scale,
-                scaledTileWidth,
-                scaledTileHeight
-              )
-              if (!map.collisionLayer[mapIndex]) {
-                // Wait have you tried to scale it yet by the translate value?
-                /*
-                if (player.y + tileHeight >= col - tileHeight) {
-                  // Above
-                  ctx.fillStyle = 'red'
-                  ctx.fillRect(
-                    row * scale,
-                    col * scale,
-                    scaledTileWidth,
-                    scaledTileHeight
-                  )
-                }
-                */
-                /*
-                if (
-                  player.y + tileHeight + player.tileHeight <=
-                  col - tileHeight
-                ) {
-                  // Below
-                  ctx.fillStyle = 'red'
-                  ctx.fillRect(
-                    row * scale,
-                    col * scale,
-                    scaledTileWidth,
-                    scaledTileHeight
-                  )
-                }
-                */
-                /*
-                if (
-                  player.x + tileWidth + player.tileWidth >=
-                  row - tileWidth
-                ) {
-                  ctx.fillStyle = 'red'
-                  ctx.fillRect(
-                    row * scale,
-                    col * scale,
-                    scaledTileWidth,
-                    scaledTileHeight
-                  )
-                }
-                if (
-                  player.x + tileWidth + player.tileWidth <= row - tileWidth &&
-                  !(
-                    player.y + tileHeight >= col - tileHeight ||
-                    player.y + tileHeight + player.tileHeight <=
-                      col - tileHeight
-                  )
-                ) {
-                  // Right
-                  ctx.fillStyle = 'red'
-                  ctx.fillRect(
-                    row * scale,
-                    col * scale,
-                    scaledTileWidth,
-                    scaledTileHeight
-                  )
-                }
-                */
+  const draw = (canvas, ctx, { elapsed, keys }) => {
+    // Center map around player
+    ctx.save()
+    ctx.translate(-player.x * 2, -player.y * 2)
+    let collisionSprites = []
+    for (let layer of map.layers) {
+      const levelMap = layer.data
+      let mapIndex = 0
+      let sourceX = 0
+      let sourceY = 0
+      for (let col = 0; col < mapHeight; col += tileHeight) {
+        for (let row = 0; row < mapWidth; row += tileWidth) {
+          let tileVal = levelMap[mapIndex]
+          if (tileVal != 0) {
+            tileVal--
+            sourceY = Math.floor(tileVal / atlasCol) * tileHeight
+            sourceX = (tileVal % atlasCol) * tileWidth
+            // Determine if user is touching square
+            ctx.drawImage(
+              tileAtlas,
+              sourceX,
+              sourceY,
+              tileWidth,
+              tileHeight,
+              row * scale,
+              col * scale,
+              scaledTileWidth,
+              scaledTileHeight
+            )
+            if (!map.collisionLayer[mapIndex]) {
+              // Wait have you tried to scale it yet by the translate value?
+              /*
+              if (player.y + tileHeight >= col - tileHeight) {
+                // Above
+                ctx.fillStyle = 'red'
+                ctx.fillRect(
+                  row * scale,
+                  col * scale,
+                  scaledTileWidth,
+                  scaledTileHeight
+                )
               }
+              */
+              /*
+              if (
+                player.y + tileHeight + player.tileHeight <=
+                col - tileHeight
+              ) {
+                // Below
+                ctx.fillStyle = 'red'
+                ctx.fillRect(
+                  row * scale,
+                  col * scale,
+                  scaledTileWidth,
+                  scaledTileHeight
+                )
+              }
+              */
+              /*
+              if (
+                player.x + tileWidth + player.tileWidth >=
+                row - tileWidth
+              ) {
+                ctx.fillStyle = 'red'
+                ctx.fillRect(
+                  row * scale,
+                  col * scale,
+                  scaledTileWidth,
+                  scaledTileHeight
+                )
+              }
+              if (
+                player.x + tileWidth + player.tileWidth <= row - tileWidth &&
+                !(
+                  player.y + tileHeight >= col - tileHeight ||
+                  player.y + tileHeight + player.tileHeight <=
+                    col - tileHeight
+                )
+              ) {
+                // Right
+                ctx.fillStyle = 'red'
+                ctx.fillRect(
+                  row * scale,
+                  col * scale,
+                  scaledTileWidth,
+                  scaledTileHeight
+                )
+              }
+              */
             }
-            mapIndex++
           }
+          mapIndex++
         }
       }
-      player.update(collisionSprites, keys, elapsed)
-      player.draw(canvas, ctx)
-      ctx.restore()
     }
+    ctx.restore()
+    player.update(collisionSprites, keys, elapsed)
+    player.draw(canvas, ctx)
   }
 
   useEffect(() => {
+    console.log('Initializing RPG canvas')
     const canvas = canvasRef.current
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
+    console.log('adding listener')
     if (canvas) {
       const ctx = canvas.getContext('2d')
       ctx.imageSmoothingEnabled = false
@@ -336,7 +348,7 @@ export default function Rpg({ map: initialMap, play }) {
         if (!lastTime) lastTime = now
         let elapsed = now - lastTime
         if (elapsed > requiredElapsed) {
-          update(
+          draw(
             canvas,
             ctx,
             {
@@ -348,8 +360,14 @@ export default function Rpg({ map: initialMap, play }) {
           lastTime = now
         }
       }
-      if (canMove) {
+      render()
+      window.addEventListener('resize', () => {
+        canvas.width = innerWidth
+        canvas.height = innerHeight
+        ctx.imageSmoothingEnabled = false
         requestAnimationFrame(render)
+      })
+      if (canMove) {
         window.addEventListener('keydown', event => {
           keys[event.key.toLowerCase()] = true
         })
@@ -375,7 +393,7 @@ export default function Rpg({ map: initialMap, play }) {
     canvas.height = window.innerHeight
     const ctx = canvas.getContext('2d')
     ctx.imageSmoothingEnabled = false
-    update(
+    draw(
       canvas,
       ctx,
       {
