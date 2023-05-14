@@ -26,7 +26,15 @@ const Rpg = dynamic(() => import('@/components/Rpg'), {
   ssr: false
 })
 
-export default function Index({ map, about, faq, signUp, team, prizes, schedule }) {
+export default function Index({
+  map,
+  about,
+  faq,
+  signUp,
+  team,
+  prizes,
+  schedule
+}) {
   let keys = {}
   const [modal, setModal] = useState(false)
   const [start, setStart] = useState(false)
@@ -62,7 +70,9 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
                   &#9654; Play
                 </button>
                 {/* <a onClick={() => setModal(true)} className={nunito.className}> */}
-                <a href="https://airtable.com/shrK2lcYQVjHLKNf4" className={nunito.className}>
+                <a
+                  href="https://airtable.com/shrK2lcYQVjHLKNf4"
+                  className={nunito.className}>
                   Register
                 </a>
               </div>
@@ -127,47 +137,97 @@ export default function Index({ map, about, faq, signUp, team, prizes, schedule 
       <section className="skip">
         <PhotoGallery />
       </section>
-      <section className='hidden'>
+      <section className="hidden">
         <pre className="heading">{prizes}</pre>
         <div className="prizes flex">
           <div className="prizetext">
-          <p>
-            We'll add details about the judging soon, but it'll be a wonderful opportunity for you to play the games your fellow jammers have made as well as talk about some of the fun things you built! Examples of categories we'll be looking at are:</p>
+            <p>
+              We'll add details about the judging soon, but it'll be a wonderful
+              opportunity for you to play the games your fellow jammers have
+              made as well as talk about some of the fun things you built!
+              Examples of categories we'll be looking at are:
+            </p>
             <ul>
-              <li><strong>Nourishingly Novel Narrative</strong></li>
-              <li><strong>Masterful Mechanics</strong> (Best Game Mechanics)</li>
-              <li><strong>Exceptional Eye Candy</strong> (Best Visuals)</li>
-              <li><strong>Uniquely Useless</strong> (believe me, this is NOT an insult. Winner gets a year's worth of Ramen!)</li>
-              <li><strong>Poignantly Pointed</strong> (not quite sure what this means, but we do know the winner gets... swords?)</li>
-              <li><strong>Dreadfully Democratic</strong></li>
+              <li>
+                <strong>Nourishingly Novel Narrative</strong>
+              </li>
+              <li>
+                <strong>Masterful Mechanics</strong> (Best Game Mechanics)
+              </li>
+              <li>
+                <strong>Exceptional Eye Candy</strong> (Best Visuals)
+              </li>
+              <li>
+                <strong>Uniquely Useless</strong> (believe me, this is NOT an
+                insult. Winner gets a year's worth of Ramen!)
+              </li>
+              <li>
+                <strong>Poignantly Pointed</strong> (not quite sure what this
+                means, but we do know the winner gets... swords?)
+              </li>
+              <li>
+                <strong>Dreadfully Democratic</strong>
+              </li>
             </ul>
-            <p>Stay tuned for more & look at our 1.0 recap!
-          </p>
+            <p>Stay tuned for more & look at our 1.0 recap!</p>
           </div>
-          <iframe src="https://www.youtube.com/embed/rv_UycMxEsQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+          <iframe
+            src="https://www.youtube.com/embed/rv_UycMxEsQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>{' '}
+        </div>
       </section>
-      <section className='hidden'>
+      <section className="hidden">
         <pre className="heading">{schedule}</pre>
         <div className="prose">
           <p>
             We'll be updating this schedule as we get closer to the event, but
-            here's a rough idea of what to expect from Saturday, May 27 to Sunday, May 28:
+            here's a rough idea of what to expect from Saturday, May 27 to
+            Sunday, May 28:
           </p>
-          <ul style={{listStyle: "none", fontSize: '1.2rem'}}>
-            <li> 👋 <strong>9:00 AM</strong> - Doors open, registration, and meet fun people</li>
-            <li> 👐 <strong>10:00 AM</strong> - Opening ceremony</li>
-            <li> 🤖 <strong>11:00 AM</strong> - Hacking starts</li>
-            <li> 🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)</li>
-            <li> 👐 <strong>...</strong> - We'll add some more things here!</li>
-            <li> 🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging time.</li>
-            <li> 💔 <strong>12:00 PM</strong> - Goodbye :) </li>
+          <ul style={{ listStyle: 'none', fontSize: '1.2rem' }}>
+            <li>
+              {' '}
+              👋 <strong>9:00 AM</strong> - Doors open, registration, and meet
+              fun people
+            </li>
+            <li>
+              {' '}
+              👐 <strong>10:00 AM</strong> - Opening ceremony
+            </li>
+            <li>
+              {' '}
+              🤖 <strong>11:00 AM</strong> - Hacking starts
+            </li>
+            <li>
+              {' '}
+              🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)
+            </li>
+            <li>
+              {' '}
+              👐 <strong>...</strong> - We'll add some more things here!
+            </li>
+            <li>
+              {' '}
+              🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging
+              time.
+            </li>
+            <li>
+              {' '}
+              💔 <strong>12:00 PM</strong> - Goodbye :){' '}
+            </li>
           </ul>
-            </div>
+        </div>
       </section>
-      <section className='hidden'>
+      <section className="hidden">
         <pre className="heading">{team}</pre>
         <div className="prose">
-          <p>Meet our very, very cool team of slightly suspicious dinosaurs from across the continent & their favorite games!</p>
+          <p>
+            Meet our very, very cool team of slightly suspicious dinosaurs from
+            across the continent & their favorite games!
+          </p>
           <div className="team">
             <div className="member">
               <h3>Claire Wang</h3>
@@ -299,7 +359,7 @@ export async function getStaticProps() {
       map: JSON.parse(
         await readFile(path.join(process.cwd(), 'public/main.json'))
       ),
-      about: figlet.textSync('What\'s this?', {
+      about: figlet.textSync("What's this?", {
         font: 'Epic'
       }),
       faq: figlet.textSync('Questions!', {
