@@ -6,7 +6,7 @@ import { Button } from './PhotoGallery'
 const FAQ = `Here's a list of commonly asked questions:
 How do I sign up? Can I? 
 -----------
-All high schoolesr welcome! If you're a high schooler (or maybe even younger), you're in. All artists, musicians, storytellers, coders, and gamers are welcome—no experience required! All we need from you is a love of games & excitement to build. Still unsure? Email us at hello@angelhacks.org.
+All high schoolers welcome! If you're a high schooler (or maybe even younger), you're in. All artists, musicians, storytellers, coders, and gamers are welcome—no experience required! All we need from you is a love of games & excitement to build. Still unsure? Email us at hello@angelhacks.org.
 
 What the heck is a game jam? Isn't it a hackathon?
 ---------------
