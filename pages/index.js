@@ -320,6 +320,7 @@ export default function Index({
             <div className="member">
               <h3>Kara Massie</h3>
               <p>Unstable Unicorns</p>
+            </div>
             <div className="member">
               <h3>Javier Zaleta Martínez</h3>
               <p>Subnautica & Monument Valley</p>
