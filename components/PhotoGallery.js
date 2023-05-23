@@ -1,6 +1,7 @@
 import Masonry from 'react-masonry-css'
 import styles from './PhotoGallery.module.scss'
 import { Nunito } from 'next/font/google'
+import { useEffect } from 'react'
 
 const nunito = Nunito({
   weight: ['400', '800'],
@@ -8,8 +9,17 @@ const nunito = Nunito({
 })
 
 export function Button({ children, fontSize = '7rem', ...props }) {
+  const handleClick = () => {
+    import('js-confetti').then(({ default: Confetti }) => {
+      const confetti = new Confetti()
+      confetti.addConfetti({
+        emojis: ['🎮', '👾', '🕹️', '💻', '📸', '🎧', '🎨', '🪽']
+      })
+    })
+  }
+
   return (
-    <button className={styles.button} {...props}>
+    <button className={styles.button} onClick={handleClick} {...props}>
       <span className={styles.shadow} />
       <span className={styles.edge} />
       <span
@@ -31,6 +41,7 @@ function Image({ src, text }) {
 }
 
 export default function PhotoGallery() {
+  useEffect(() => {}, [])
   return (
     <div className={styles.photoGallery}>
       <div className={styles.photos}>
