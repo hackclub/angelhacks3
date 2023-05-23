@@ -187,14 +187,56 @@ export default function Index({
             here's a rough idea of what to expect from Saturday, May 27 to
             Sunday, May 28:
           </p>
-          <ul style={{listStyle: "none", fontSize: '1.2rem'}}>
-            <li> 👋 <strong>9:00 AM</strong> - Doors open, registration, and meet fun people</li>
-            <li> 👐 <strong>10:00 AM</strong> - Opening ceremony</li>
-            <li> 🤖 <strong>11:00 AM</strong> - Hacking starts</li>
-            <li> 🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)</li>
-            <li> 👐 <strong>...</strong> - We'll add some more things here!</li>
-            <li> 🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging time.</li>
-            <li> 💔 <strong>12:00 PM</strong> - Goodbye :) </li>
+          <ul style={{ listStyle: 'none', fontSize: '1.2rem' }}>
+            <li>
+              {' '}
+              👋 <strong>9:00 AM</strong> - Doors open, registration, and meet
+              fun people
+            </li>
+            <li>
+              {' '}
+              👐 <strong>10:00 AM</strong> - Opening ceremony
+            </li>
+            <li>
+              {' '}
+              🤖 <strong>11:00 AM</strong> - Hacking starts
+            </li>
+            <li>
+              {' '}
+              🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)
+            </li>
+            <li> 
+              {' '}
+              🔨 <strong>11:30 AM</strong> - Sprig Games Workshop w/ Thomas
+            </li>
+            <li> 
+              {' '}
+              🔨 <strong>12:30 PM</strong> - Generative AI for Games Workshop w/ Kevin</li>
+              <li> 
+              {' '}
+              🍲 <strong>1:00 PM</strong> - Lunch! Get your energy up!</li>
+            <li> 
+              {' '}
+              🔨 <strong>3:00 PM</strong> - Intro to Blender w/ Gabe</li>
+              <li> 
+              {' '}
+              🔨 <strong>4:00 PM</strong> - Animation and Game Art w/ Darla</li>
+              <li> 
+              {' '}
+              🔨 <strong>5:00 PM</strong> - 3D Shaders and Graphics w/ Kai</li>
+            <li>
+              {' '}
+              👐 <strong>...</strong> - We'll add some more things here!
+            </li>
+            <li>
+              {' '}
+              🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging
+              time.
+            </li>
+            <li>
+              {' '}
+              💔 <strong>12:00 PM</strong> - Goodbye :){' '}
+            </li>
           </ul>
         </div>
       </section>
