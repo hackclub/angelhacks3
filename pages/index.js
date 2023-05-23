@@ -57,7 +57,7 @@ export default function Index({
                     AngelHacks <sup>3.0</sup>
                   </span>
                 </h1>
-                <h6>May 27 - 28 @ Boston Seaport</h6>
+                <h6>May 27 - 28 @ Boston Industrious Seaport</h6>
               </div>
               <div className="choices">
                 <button
@@ -107,7 +107,7 @@ export default function Index({
             <a className="link" href="https://airtable.com/shrK2lcYQVjHLKNf4">
               Sign up now!
             </a>{' '}
-            If you're not in the Boston area, look up to find the links to our 3
+            The address of the event is <strong>22 Boston Wharf Rd.</strong> in the Seaport area—just walk in and there'll be someone to buzz you up! If you're late, feel free to pop us an email or text us (we'll be sending out a few follow-up emails with waivers and detailed contract info). If you're not in the Boston area, look up to find the links to our 3
             satellite events: Bay Area, Los Angeles, and Toronto.
           </p>
           <p>
