@@ -226,12 +226,27 @@ export default function Index({
               🔨 <strong>5:00 PM</strong> - 3D Shaders and Graphics w/ Kai</li>
             <li>
               {' '}
-              👐 <strong>...</strong> - We'll add some more things here!
+              📺 <strong>7:00 PM</strong> - 12-hour track & Toronto project showcases 
             </li>
             <li>
               {' '}
-              🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging
-              time.
+              👐 <strong>9:00 PM</strong> - 12-hour track people leave :( 
+            </li>
+            <li>
+              {' '}
+              😪 <strong>12:00 AM</strong> - Midnight event!? Game night!?? Top secret.
+            </li>
+            <li>
+              {' '}
+              ☕ <strong>3:30 AM</strong> - Still awake? Make your won cursed caffeinated concoctions.
+            </li>
+            <li>
+              {' '}
+              🥐 <strong>8:00 AM</strong> - Breakfast time!
+            </li>
+            <li>
+              {' '}
+              🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Time to showcase your work and play games.
             </li>
             <li>
               {' '}
