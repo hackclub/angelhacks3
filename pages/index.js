@@ -187,37 +187,14 @@ export default function Index({
             here's a rough idea of what to expect from Saturday, May 27 to
             Sunday, May 28:
           </p>
-          <ul style={{ listStyle: 'none', fontSize: '1.2rem' }}>
-            <li>
-              {' '}
-              👋 <strong>9:00 AM</strong> - Doors open, registration, and meet
-              fun people
-            </li>
-            <li>
-              {' '}
-              👐 <strong>10:00 AM</strong> - Opening ceremony
-            </li>
-            <li>
-              {' '}
-              🤖 <strong>11:00 AM</strong> - Hacking starts
-            </li>
-            <li>
-              {' '}
-              🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)
-            </li>
-            <li>
-              {' '}
-              👐 <strong>...</strong> - We'll add some more things here!
-            </li>
-            <li>
-              {' '}
-              🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging
-              time.
-            </li>
-            <li>
-              {' '}
-              💔 <strong>12:00 PM</strong> - Goodbye :){' '}
-            </li>
+          <ul style={{listStyle: "none", fontSize: '1.2rem'}}>
+            <li> 👋 <strong>9:00 AM</strong> - Doors open, registration, and meet fun people</li>
+            <li> 👐 <strong>10:00 AM</strong> - Opening ceremony</li>
+            <li> 🤖 <strong>11:00 AM</strong> - Hacking starts</li>
+            <li> 🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)</li>
+            <li> 👐 <strong>...</strong> - We'll add some more things here!</li>
+            <li> 🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging time.</li>
+            <li> 💔 <strong>12:00 PM</strong> - Goodbye :) </li>
           </ul>
         </div>
       </section>
