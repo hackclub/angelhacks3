@@ -57,7 +57,7 @@ export default function Index({
                     AngelHacks <sup>3.0</sup>
                   </span>
                 </h1>
-                <h6>May 27 - 28 @ Boston Seaport</h6>
+                <h6>May 27 - 28 @ Boston Industrious Seaport</h6>
               </div>
               <div className="choices">
                 <button
@@ -107,7 +107,7 @@ export default function Index({
             <a className="link" href="https://airtable.com/shrK2lcYQVjHLKNf4">
               Sign up now!
             </a>{' '}
-            If you're not in the Boston area, look up to find the links to our 3
+            The address of the event is <strong>22 Boston Wharf Rd.</strong> in the Seaport area—just walk in and there'll be someone to buzz you up! If you're late, feel free to pop us an email or text us (we'll be sending out a few follow-up emails with waivers and detailed contract info). If you're not in the Boston area, look up to find the links to our 3
             satellite events: Bay Area, Los Angeles, and Toronto.
           </p>
           <p>
@@ -205,14 +205,48 @@ export default function Index({
               {' '}
               🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)
             </li>
+            <li> 
+              {' '}
+              🔨 <strong>11:30 AM</strong> - Sprig Games Workshop w/ Thomas
+            </li>
+            <li> 
+              {' '}
+              🔨 <strong>12:30 PM</strong> - Generative AI for Games Workshop w/ Kevin</li>
+              <li> 
+              {' '}
+              🍲 <strong>1:00 PM</strong> - Lunch! Get your energy up!</li>
+            <li> 
+              {' '}
+              🔨 <strong>3:00 PM</strong> - Intro to Blender w/ Gabe</li>
+              <li> 
+              {' '}
+              🔨 <strong>4:00 PM</strong> - Animation and Game Art w/ Darla</li>
+              <li> 
+              {' '}
+              🔨 <strong>5:00 PM</strong> - 3D Shaders and Graphics w/ Kai</li>
             <li>
               {' '}
-              👐 <strong>...</strong> - We'll add some more things here!
+              📺 <strong>7:00 PM</strong> - 12-hour track & Toronto project showcases 
             </li>
             <li>
               {' '}
-              🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Judging
-              time.
+              👐 <strong>9:00 PM</strong> - 12-hour track people leave :( 
+            </li>
+            <li>
+              {' '}
+              😪 <strong>12:00 AM</strong> - Midnight event!? Game night!?? Top secret.
+            </li>
+            <li>
+              {' '}
+              ☕ <strong>3:30 AM</strong> - Still awake? Make your won cursed caffeinated concoctions.
+            </li>
+            <li>
+              {' '}
+              🥐 <strong>8:00 AM</strong> - Breakfast time!
+            </li>
+            <li>
+              {' '}
+              🛑 <strong>9:00 AM</strong> - Hands up! Off the keyboard! Time to showcase your work and play games.
             </li>
             <li>
               {' '}
@@ -320,6 +354,10 @@ export default function Index({
             <div className="member">
               <h3>Kara Massie</h3>
               <p>Unstable Unicorns</p>
+            </div>
+            <div className="member">
+              <h3>Javier Zaleta Martínez</h3>
+              <p>Subnautica & Monument Valley</p>
             </div>
           </div>
         </div>
