@@ -199,31 +199,28 @@ export default function Index({
             </li>
             <li>
               {' '}
-              🤖 <strong>11:00 AM</strong> - Hacking starts
+              🤖 <strong>11:00 AM</strong> - Hacking starts & Intro to Blender w/ Gabe
             </li>
             <li>
               {' '}
-              🌸 <strong>11:30 AM</strong> - Beginner Workshop (TBD)
+              🌸 <strong>12:00 PM</strong> - Sprig Games Workshop w/ Thomas
             </li>
             <li> 
               {' '}
-              🔨 <strong>11:30 AM</strong> - Sprig Games Workshop w/ Thomas
+              🔨 <strong>1:00 PM</strong> - Lunch + Be Better than the Other Satellites!  
             </li>
             <li> 
               {' '}
-              🔨 <strong>12:30 PM</strong> - Generative AI for Games Workshop w/ Kevin</li>
+              🔨 <strong>2:00 PM</strong> - Construct w/ Neel</li>
               <li> 
               {' '}
-              🍲 <strong>1:00 PM</strong> - Lunch! Get your energy up!</li>
+              🍲 <strong>3:00 PM</strong> - Working with Games as Narratives w/ Damian</li>
+              <li> 
+              {' '}
+              🔨 <strong>4:00 PM</strong> - Generative AI for Games Workshop w/ Kevin</li>
             <li> 
               {' '}
-              🔨 <strong>3:00 PM</strong> - Intro to Blender w/ Gabe</li>
-              <li> 
-              {' '}
-              🔨 <strong>4:00 PM</strong> - Animation and Game Art w/ Darla</li>
-              <li> 
-              {' '}
-              🔨 <strong>5:00 PM</strong> - 3D Shaders and Graphics w/ Kai</li>
+              🔨 <strong>5:00 PM</strong> - 3D Shaders and Graphics w/ Kai & Animation and Game Art w/ Darla</li>
             <li>
               {' '}
               📺 <strong>7:00 PM</strong> - 12-hour track & Toronto project showcases 
