@@ -203,7 +203,7 @@ export default function Index({
             </li>
             <li>
               {' '}
-              🌸 <strong>12:00 PM</strong> - Sprig Games Workshop w/ Thomas
+              🌸 <strong>12:00 PM</strong> - Construct w/ Neel
             </li>
             <li> 
               {' '}
@@ -211,7 +211,7 @@ export default function Index({
             </li>
             <li> 
               {' '}
-              🔨 <strong>2:00 PM</strong> - Construct w/ Neel</li>
+              🔨 <strong>2:00 PM</strong> - Sprig Games Workshop w/ Thomas</li>
               <li> 
               {' '}
               🍲 <strong>3:00 PM</strong> - Working with Games as Narratives w/ Damian</li>
