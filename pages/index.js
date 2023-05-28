@@ -149,24 +149,26 @@ export default function Index({
             </p>
             <ul>
               <li>
-                <strong>Nourishingly Novel Narrative</strong>
+                <strong>“Most likely to leave players in financial ruin”</strong> - Nintendo Switch Lite
               </li>
               <li>
-                <strong>Masterful Mechanics</strong> (Best Game Mechanics)
+                <strong>Poignantly Pointful</strong> - swords. sharp? maybe. you signed a waiver.
               </li>
               <li>
-                <strong>Exceptional Eye Candy</strong> (Best Visuals)
+                <strong>Nostalgically Nap-preventing</strong> - Retro Game Consoles
               </li>
               <li>
                 <strong>Uniquely Useless</strong> (believe me, this is NOT an
                 insult. Winner gets a year's worth of Ramen!)
               </li>
               <li>
-                <strong>Poignantly Pointed</strong> (not quite sure what this
-                means, but we do know the winner gets... swords?)
+                <strong>Uniquely Useless</strong> - A Year’s Worth of Ramen 
               </li>
               <li>
-                <strong>Dreadfully Democratic</strong>
+                <strong>Masterful Mechanics</strong> - Macropads
+              </li>
+              <li>
+                <strong>Ostentatiously Offline</strong> - Board Games :) 
               </li>
             </ul>
             <p>Stay tuned for more & look at our 1.0 recap!</p>
